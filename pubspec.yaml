@@ -1,0 +1,116 @@
+name: gabon_meuble_app
+description: "A new Flutter project."
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+
+#-------------------------- PACKAGES -------------------------#
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Utility Packages
+  http: ^1.4.0
+  intl: ^0.20.2
+  logger: ^2.5.0
+  url_launcher: ^6.3.1
+  flutter_native_splash: ^2.4.6
+  smooth_page_indicator: ^1.2.1
+
+  # Icons
+  iconsax: ^0.0.8
+  cupertino_icons: ^1.0.8
+
+  # State Management
+  get: ^4.7.2
+  get_storage: ^2.1.1
+  firebase_core: ^3.13.1
+  firebase_auth: ^5.6.0
+  device_preview: ^1.2.0
+
+  # Product Specific
+  readmore: ^3.0.0
+  carousel_slider: ^5.0.0
+  flutter_rating_bar: ^4.0.1
+  
+
+
+  #-------------------------- ./ PACKAGES END -------------------------#
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+
+flutter:
+  uses-material-design: true
+
+  #-------------------------- LOCAL ASSETS -------------------------#
+  assets:
+    - assets/logos/
+    - assets/icons/brands/
+    - assets/icons/categories/
+    - assets/images/on_boarding_images/
+    - assets/images/animations/
+    - assets/images/banners/
+    - assets/images/content/
+    - assets/images/products/
+    - assets/icons/payment_methods/
+    - assets/images/reviews/
+    
+
+  #-------------------------- LOCAL FONTS -------------------------#
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Nunito-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Nunito-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Nunito-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Nunito-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Montserrat-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Montserrat-Bold.ttf
+          weight: 800
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

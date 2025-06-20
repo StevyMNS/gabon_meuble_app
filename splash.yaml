@@ -1,0 +1,18 @@
+flutter_native_splash:
+  color: "#FFFFFF"
+  color_dark: "1B4D3E"
+  image: assets/logos/logo_gabon_meuble_couleur.png
+  image_dark: assets/logos/logo_gabon_meuble.png
+
+
+  android_12:
+    color: "#FFFFFF"
+    color_dark: "1B4D3E"
+    image: assets/logos/logo_gabon_meuble_couleur.png
+    image_dark: assets/logos/logo_gabon_meuble.png
+
+
+
+  web: false
+
+

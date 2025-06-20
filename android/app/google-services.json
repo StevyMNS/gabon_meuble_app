@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1056945213516",
+    "project_id": "gabonmeuble-b8ebc",
+    "storage_bucket": "gabonmeuble-b8ebc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056945213516:android:eb1017d0a2694985dea4e9",
+        "android_client_info": {
+          "package_name": "com.example.gabon_meuble_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbcXBdBqRn3hv1LNpsjfJzoEtILCcFhD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
