@@ -14,12 +14,12 @@ class GMHomeCategories extends StatelessWidget {
       height: 80,
       child: ListView.builder(
         shrinkWrap: true,
-        itemCount: 6,
+        itemCount: categoriesList.length,
         scrollDirection: Axis.horizontal,
-        itemBuilder: (_, index) {
+        itemBuilder: (context, index) {
           return GMVerticalImageText(
-            image: GMImages.furnitureIcon,
-            title: 'Artisans',
+            image: categoriesImage[index],
+            title: categoriesList[index],
             onTape: () => Get.to(() => const SubCategoriesScreen()),
           );
         },
@@ -27,3 +27,21 @@ class GMHomeCategories extends StatelessWidget {
     );
   }
 }
+
+List<String> categoriesList = [
+  "Artisans",
+  "Soudeurs",
+  "Menuserier",
+  "Meubles intérieurs",
+  "Meubles exterieurs",
+  "Portails",
+];
+
+List<String> categoriesImage = [
+  "assets/images/products/bedroom_bed_black.png",
+  "assets/images/products/kitchen_counter.png",
+  "assets/images/products/bedroom_sofa.png",
+  "assets/images/products/bedroom_wardrobe.png",
+  "assets/images/products/bedroom_bed_with_comforter.png",
+  "assets/images/products/kitchen_dining table.png",
+];

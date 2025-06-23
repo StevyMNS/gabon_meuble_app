@@ -44,7 +44,8 @@ class GMVerticalImageText extends StatelessWidget {
                 child: Image(
                   image: AssetImage(image),
                   fit: BoxFit.cover,
-                  color: dark ? GMColors.light : GMColors.dark,
+
+                  ///color: dark ? GMColors.light : GMColors.dark,
                 ),
               ),
             ),

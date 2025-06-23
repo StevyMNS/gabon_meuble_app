@@ -50,6 +50,8 @@ class GMImages {
       "assets/images/on_boarding_images/sammy-line-delivery.gif";
 
   // -- Animations
+  static const String docerAnimation =
+      "assets/images/animations/141594-animation-of-docer.json";
   static const String productsIllustration =
       "assets/images/animations/sammy-line-workout.gif";
   static const String productsSaleIllustration =

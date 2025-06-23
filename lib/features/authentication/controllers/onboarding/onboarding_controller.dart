@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:gabon_meuble_app/features/authentication/screens/login/login.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
@@ -21,6 +23,14 @@ class OnBoardingController extends GetxController {
   /// Update Current Index & Jump to the next page
   void nextPage() {
     if (currentPageIndex.value == 2) {
+      final storage = GetStorage();
+
+      if (kDebugMode) {
+        print("================== GET STORAGE Next Button ==================");
+        print(storage.read("isFirstTime"));
+      }
+
+      storage.write("isFirstTime", false);
       Get.offAll(const LoginScreen());
     } else {
       int page = currentPageIndex.value + 1;

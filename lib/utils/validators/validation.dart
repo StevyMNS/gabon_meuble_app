@@ -1,4 +1,14 @@
 class GMValidator {
+  /// Empty Text Validator
+  static String? validateEmptyText(String? firstName, String? value) {
+    if (value == null || value.isEmpty) {
+      return '$firstName is required.';
+    }
+
+    return null;
+  }
+
+  /// Email Validation
   static String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       return 'Email is required.';
@@ -44,14 +54,14 @@ class GMValidator {
 
   static String? validatePhoneNumber(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Phone number is required.';
+      return 'Le numéro de téléphone est requis.';
     }
 
-    // Regular expression for phone number validation (assuming a 10-digit US phone number format)
-    final phoneRegExp = RegExp(r'^\d{10}$');
+    // Expression régulière pour un numéro gabonais local à 9 chiffres, débutant par 01, 06 ou 07
+    final phoneRegExp = RegExp(r'^(01|06|07)\d{7}$');
 
     if (!phoneRegExp.hasMatch(value)) {
-      return 'Invalid phone number format (10 digits required).';
+      return 'Numéro de téléphone invalide. Format attendu : 06XXXXXXX.';
     }
 
     return null;

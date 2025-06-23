@@ -52,6 +52,5 @@ class GMAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(GMDeviceUtils.getAppBarHeight());
 }

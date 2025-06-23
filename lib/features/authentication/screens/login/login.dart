@@ -26,7 +26,9 @@ class LoginScreen extends StatelessWidget {
               const GMLoginForm(),
 
               /// Divider
-              GMFormDivider(dividerText: GMTextStrings.orSignInWith.capitalize!,),
+              GMFormDivider(
+                dividerText: GMTextStrings.orSignInWith.capitalize!,
+              ),
               const SizedBox(height: GSizes.spaceBtwSections),
 
               /// Footer
@@ -38,11 +40,3 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-

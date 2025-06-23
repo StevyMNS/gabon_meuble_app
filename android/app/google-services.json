@@ -12,7 +12,20 @@
           "package_name": "com.example.gabon_meuble_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1056945213516-ng8gfpb1546db5aqf7ahmujp1uahrk6f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gabon_meuble_app",
+            "certificate_hash": "a0fda3a836d39a4bdb63371c19577386a39410d9"
+          }
+        },
+        {
+          "client_id": "1056945213516-2q9drb8re3tfmj6ccj724e60pvirndcm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCbcXBdBqRn3hv1LNpsjfJzoEtILCcFhD0"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056945213516-2q9drb8re3tfmj6ccj724e60pvirndcm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1056945213516-nmcbmp2bgp7ljdbf6vgna84rh471htbs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.gabonMeubleApp"
+              }
+            }
+          ]
         }
       }
     }

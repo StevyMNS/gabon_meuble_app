@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gabon_meuble_app/features/authentication/controllers/singup/signup_controller.dart';
 import 'package:gabon_meuble_app/features/authentication/screens/signup/widgets/terms_conditions_checkbox.dart';
-import 'package:gabon_meuble_app/features/authentication/screens/verify_email.dart';
+import 'package:gabon_meuble_app/utils/validators/validation.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -12,13 +13,20 @@ class GMSignupForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignupController());
     return Form(
+      key: controller.signupFormKey,
       child: Column(
         children: [
+          /// First Name and Last Name
           Row(
             children: [
               Expanded(
                 child: TextFormField(
+                  controller: controller.firstName,
+                  validator:
+                      (value) =>
+                          GMValidator.validateEmptyText("First name", value),
                   expands: false,
                   decoration: const InputDecoration(
                     labelText: GMTextStrings.firstName,
@@ -29,6 +37,10 @@ class GMSignupForm extends StatelessWidget {
               const SizedBox(width: GSizes.spaceBtwInputFields),
               Expanded(
                 child: TextFormField(
+                  controller: controller.lastName,
+                  validator:
+                      (value) =>
+                          GMValidator.validateEmptyText("Last name", value),
                   expands: false,
                   decoration: const InputDecoration(
                     labelText: GMTextStrings.lastName,
@@ -42,6 +54,9 @@ class GMSignupForm extends StatelessWidget {
 
           /// Username
           TextFormField(
+            controller: controller.userName,
+            validator:
+                (value) => GMValidator.validateEmptyText("Username", value),
             expands: false,
             decoration: const InputDecoration(
               labelText: GMTextStrings.username,
@@ -52,6 +67,8 @@ class GMSignupForm extends StatelessWidget {
 
           /// Email
           TextFormField(
+            validator: (value) => GMValidator.validateEmail(value),
+            controller: controller.email,
             decoration: const InputDecoration(
               labelText: GMTextStrings.email,
               prefixIcon: Icon(Iconsax.direct),
@@ -61,6 +78,8 @@ class GMSignupForm extends StatelessWidget {
 
           /// Phone Number
           TextFormField(
+            validator: (value) => GMValidator.validatePhoneNumber(value),
+            controller: controller.phoneNumber,
             decoration: const InputDecoration(
               labelText: GMTextStrings.phoneNo,
               prefixIcon: Icon(Iconsax.call),
@@ -69,12 +88,26 @@ class GMSignupForm extends StatelessWidget {
           const SizedBox(height: GSizes.spaceBtwInputFields),
 
           /// Password
-          TextFormField(
-            obscureText: true,
-            decoration: const InputDecoration(
-              labelText: GMTextStrings.password,
-              prefixIcon: Icon(Iconsax.password_check),
-              suffixIcon: Icon(Iconsax.eye_slash),
+          Obx(
+            () => TextFormField(
+              validator: (value) => GMValidator.validatePassword(value),
+              controller: controller.password,
+              obscureText: controller.hidePassword.value,
+              decoration: InputDecoration(
+                labelText: GMTextStrings.password,
+                prefixIcon: const Icon(Iconsax.password_check),
+                suffixIcon: IconButton(
+                  onPressed:
+                      () =>
+                          controller.hidePassword.value =
+                              !controller.hidePassword.value,
+                  icon: Icon(
+                    controller.hidePassword.value
+                        ? Iconsax.eye_slash
+                        : Iconsax.eye,
+                  ),
+                ),
+              ),
             ),
           ),
           const SizedBox(height: GSizes.spaceBtwInputFields),
@@ -87,7 +120,7 @@ class GMSignupForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () => Get.to(() => const VerifyEmailScreen()),
+              onPressed: () => controller.signup(),
               child: const Text(GMTextStrings.createAccount),
             ),
           ),

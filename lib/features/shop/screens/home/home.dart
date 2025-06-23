@@ -64,9 +64,9 @@ class HomeScreen extends StatelessWidget {
                   /// -- Promo Slider --
                   const GMPromoSlider(
                     banners: [
-                      GMImages.promoBanner1,
-                      GMImages.promoBanner2,
-                      GMImages.promoBanner3,
+                      GMImages.productImage34,
+                      GMImages.productImage35,
+                      GMImages.productImage36,
                     ],
                   ),
                   const SizedBox(height: GSizes.spaceBtwSections),

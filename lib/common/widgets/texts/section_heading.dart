@@ -29,7 +29,9 @@ class GMSectionHeading extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
         if (showActionButton)
-          TextButton(onPressed: onPressed, child: Text(buttonTitle)),
+          Flexible(
+            child: TextButton(onPressed: onPressed, child: Text(buttonTitle)),
+          ),
       ],
     );
   }

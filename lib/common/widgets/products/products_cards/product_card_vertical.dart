@@ -101,7 +101,7 @@ class GMProductCardVertical extends StatelessWidget {
                 ),
               ),
             ),
-            const Spacer(),
+            Spacer(),
 
             /// Price Row
             Row(
