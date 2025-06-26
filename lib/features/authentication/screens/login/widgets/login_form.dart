@@ -102,6 +102,10 @@ class GMLoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  foregroundColor: Colors.black,
+                ),
                 onPressed: () => Get.to(() => const SignupScreen()),
                 child: const Text(GMTextStrings.createAccount),
               ),

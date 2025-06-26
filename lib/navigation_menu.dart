@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gabon_meuble_app/features/personalization/screens/settings/settings.dart';
+import 'package:gabon_meuble_app/features/shop/screens/messagerie/messagerie.dart';
 import 'package:gabon_meuble_app/features/shop/screens/wishlist/wishlist.dart';
 import 'package:gabon_meuble_app/utils/constants/colors.dart';
 import 'package:gabon_meuble_app/utils/helpers/helper_functions.dart';
@@ -7,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import 'features/shop/screens/home/home.dart';
-import 'features/shop/screens/store/store.dart';
+import 'features/shop/screens/store/explorer.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -32,10 +33,17 @@ class NavigationMenu extends StatelessWidget {
                   : GMColors.black.withValues(alpha: 0.1),
 
           destinations: const [
-            NavigationDestination(icon: Icon(Iconsax.home), label: "Home"),
-            NavigationDestination(icon: Icon(Iconsax.shop), label: "Store"),
-            NavigationDestination(icon: Icon(Iconsax.heart), label: "Wishlist"),
-            NavigationDestination(icon: Icon(Iconsax.user), label: "Profile"),
+            NavigationDestination(icon: Icon(Iconsax.home), label: "Accueil"),
+            NavigationDestination(icon: Icon(Iconsax.shop), label: "Explorer"),
+            NavigationDestination(
+              icon: Icon(Iconsax.shopping_cart),
+              label: "Commandes",
+            ),
+            NavigationDestination(
+              icon: Icon(Iconsax.message),
+              label: "Messages",
+            ),
+            NavigationDestination(icon: Icon(Iconsax.user), label: "Profil"),
           ],
         ),
       ),
@@ -51,6 +59,7 @@ class NavigationController extends GetxController {
     const HomeScreen(),
     const StoreScreen(),
     const FavouriteScreen(),
+    const MessagesPage(),
     const SettingsScreen(),
   ];
 }

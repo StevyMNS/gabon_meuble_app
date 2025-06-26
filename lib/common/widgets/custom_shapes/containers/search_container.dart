@@ -14,7 +14,7 @@ class GMSearchContainer extends StatelessWidget {
     this.showBackground = true,
     this.showBorder = true,
     this.onTap,
-    this.padding = const EdgeInsets.symmetric(horizontal: GSizes.defaultSpace)
+    this.padding = const EdgeInsets.symmetric(horizontal: GSizes.defaultSpace),
   });
 
   final String text;
@@ -44,9 +44,20 @@ class GMSearchContainer extends StatelessWidget {
             borderRadius: BorderRadius.circular(GSizes.cardRadiusLg),
             border: showBorder ? Border.all(color: GMColors.grey) : null,
           ),
-          child: Row(
+          child: /*TextField(
+            decoration: InputDecoration(
+              hintText: 'Rechercher un artisan ou un produit',
+              filled: true,
+              fillColor: Colors.white,
+              prefixIcon: const Icon(Icons.search),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide.none,
+              ),
+            ),
+          ) */ Row(
             children: [
-              Icon(icon, color: dark? GMColors.darkGrey : GMColors.grey),
+              Icon(icon, color: dark ? GMColors.darkGrey : GMColors.grey),
               const SizedBox(width: GSizes.spaceBtwItems),
               Text(text, style: Theme.of(context).textTheme.bodySmall),
             ],

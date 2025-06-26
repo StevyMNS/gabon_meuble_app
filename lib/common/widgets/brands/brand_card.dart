@@ -10,7 +10,7 @@ import '../images/gm_circular_image.dart';
 import '../texts/gm_brand_title_text_with_verified_icon.dart';
 
 class GMBrandCard extends StatelessWidget {
-  const GMBrandCard({super.key, this.onTap, required this.showBorder,});
+  const GMBrandCard({super.key, this.onTap, required this.showBorder});
 
   final bool showBorder;
   final void Function()? onTap;
@@ -20,6 +20,7 @@ class GMBrandCard extends StatelessWidget {
     final isDark = GMHelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
+
       /// Container Design
       child: GMRoundedContainer(
         padding: const EdgeInsets.all(GSizes.sm),
@@ -46,11 +47,11 @@ class GMBrandCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const GMBrandTitleWithVerifiedIcon(
-                    title: "Nike",
+                    title: "Atelier Mbadinga",
                     brandTextSize: TextSizes.large,
                   ),
                   Text(
-                    "256 products",
+                    "Libreville — Menuiserie",
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.labelMedium,
                   ),
@@ -63,3 +64,27 @@ class GMBrandCard extends StatelessWidget {
     );
   }
 }
+
+final List<Map<String, dynamic>> gmBrands = [
+  {
+    "name": "Atelier Mbadinga",
+    "image": GMImages.clothIcon,
+    "location": "Libreville",
+    "speciality": "Menuiserie",
+    "isVerified": true,
+  },
+  {
+    "name": "Atelier Mvoula",
+    "image": GMImages.clothIcon,
+    "location": "Port-Gentil",
+    "speciality": "Menuiserie",
+    "isVerified": false,
+  },
+  {
+    "name": "Atelier Ngoma",
+    "image": GMImages.clothIcon,
+    "location": "Franceville",
+    "speciality": "Menuiserie",
+    "isVerified": true,
+  },
+];

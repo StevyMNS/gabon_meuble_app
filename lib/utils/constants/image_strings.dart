@@ -256,4 +256,15 @@ class GMImages {
   static const String paytm = "assets/icons/payment_methods/paytm.png";
   static const String successfulPaymentIcon =
       "assets/icons/payment_methods/successful_payment_icon.png";
+
+  // -- Catégories
+  static const bedroomWardrobe = 'assets/images/products/bedroom_wardrobe.png';
+  static const bedroomSofa = 'assets/images/products/bedroom_sofa.png';
+  static const bedroomBedBlack = 'assets/images/products/bedroom_bed_black.png';
+  static const bedroomBedComforter =
+      'assets/images/products/bedroom_bed_with_comforter.png';
+  static const kitchenCounter = 'assets/images/products/kitchen_counter.png';
+  static const kitchenDiningTable =
+      'assets/images/products/kitchen_dining_table.png';
+  static const portails = 'assets/images/banners/promo_banner_1.png';
 }

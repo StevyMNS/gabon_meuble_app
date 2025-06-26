@@ -24,13 +24,13 @@ class StoreScreen extends StatelessWidget {
       child: Scaffold(
         appBar: GMAppBar(
           title: Text(
-            'Store',
+            'Explorer',
             style: Theme.of(context).textTheme.headlineMedium,
           ),
           actions: [GMCartCounterIcon(onPressed: () {})],
         ),
         body: NestedScrollView(
-          headerSliverBuilder: (_, innerBoxxIsScrolled) {
+          headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [
               SliverAppBar(
                 automaticallyImplyLeading: false,
@@ -42,48 +42,46 @@ class StoreScreen extends StatelessWidget {
                         : GMColors.white,
                 expandedHeight: 440,
                 flexibleSpace: Padding(
-                  padding: const EdgeInsetsGeometry.all(GSizes.defaultSpace),
+                  padding: const EdgeInsets.all(GSizes.defaultSpace),
                   child: ListView(
-                    shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
-                      /// -- Search bar
                       const SizedBox(height: GSizes.spaceBtwItems),
+
+                      /// Barre de recherche
                       const GMSearchContainer(
-                        text: "Search in Store",
+                        text: "Rechercher un artisan ou un produit...",
                         showBorder: true,
                         showBackground: false,
                         padding: EdgeInsets.zero,
                       ),
                       const SizedBox(height: GSizes.spaceBtwSections),
 
-                      /// -- Featured Brands
+                      /// Section Ateliers & Artisans
                       GMSectionHeading(
-                        title: "Featured Brands",
+                        title: "Ateliers & Artisans",
                         onPressed: () => Get.to(() => const AllBrandsScreen()),
                       ),
                       const SizedBox(height: GSizes.spaceBtwItems / 1.5),
 
-                      /// -- Brands GRID
                       GMGridLayout(
                         itemCount: 4,
                         mainAxisExtent: 80,
-                        itemBuilder: (_, index) {
-                          return const GMBrandCard(showBorder: false);
-                        },
+                        itemBuilder:
+                            (_, index) => const GMBrandCard(showBorder: false),
                       ),
                     ],
                   ),
                 ),
 
-                /// -- Tabs
+                /// Onglets
                 bottom: const GMTabBar(
                   tabs: [
-                    Tab(child: Text("Sports")),
-                    Tab(child: Text("Furniture")),
-                    Tab(child: Text("Electronics")),
-                    Tab(child: Text("Clothes")),
-                    Tab(child: Text("Cosmetic")),
+                    Tab(child: Text("Tous les produits")),
+                    Tab(child: Text("Artisanat bois")),
+                    Tab(child: Text("Métal & soudure")),
+                    Tab(child: Text("Meubles intérieurs")),
+                    Tab(child: Text("Meubles extérieurs")),
                   ],
                 ),
               ),
@@ -91,11 +89,11 @@ class StoreScreen extends StatelessWidget {
           },
           body: const TabBarView(
             children: [
-              GMCategoryTab(),
-              GMCategoryTab(),
-              GMCategoryTab(),
-              GMCategoryTab(),
-              GMCategoryTab(),
+              GMCategoryTab(), // Tous
+              GMCategoryTab(), // Bois
+              GMCategoryTab(), // Métal
+              GMCategoryTab(), // Intérieur
+              GMCategoryTab(), // Extérieur
             ],
           ),
         ),

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gabon_meuble_app/features/shop/screens/sub_category/sub_categories.dart';
-import 'package:gabon_meuble_app/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
-
+import 'package:gabon_meuble_app/features/shop/screens/sub_category/sub_categories.dart';
 import '../../../../../common/widgets/image_text_widgets/widget_image_text.dart';
+import '../../../../../utils/constants/image_strings.dart';
 
 class GMHomeCategories extends StatelessWidget {
   const GMHomeCategories({super.key});
@@ -11,16 +10,19 @@ class GMHomeCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80,
+      height: 90,
       child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: categoriesList.length,
+        itemCount: _categories.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
+          final category = _categories[index];
           return GMVerticalImageText(
-            image: categoriesImage[index],
-            title: categoriesList[index],
-            onTape: () => Get.to(() => const SubCategoriesScreen()),
+            image: category['image']!,
+            title: category['title']!,
+            onTape:
+                () => Get.to(
+                  () => SubCategoriesScreen(categoryTitle: category['title']!),
+                ),
           );
         },
       ),
@@ -28,20 +30,11 @@ class GMHomeCategories extends StatelessWidget {
   }
 }
 
-List<String> categoriesList = [
-  "Artisans",
-  "Soudeurs",
-  "Menuserier",
-  "Meubles intérieurs",
-  "Meubles exterieurs",
-  "Portails",
-];
-
-List<String> categoriesImage = [
-  "assets/images/products/bedroom_bed_black.png",
-  "assets/images/products/kitchen_counter.png",
-  "assets/images/products/bedroom_sofa.png",
-  "assets/images/products/bedroom_wardrobe.png",
-  "assets/images/products/bedroom_bed_with_comforter.png",
-  "assets/images/products/kitchen_dining table.png",
+final List<Map<String, String>> _categories = [
+  {'title': 'Menuiserie', 'image': GMImages.bedroomWardrobe},
+  {'title': 'Soudure', 'image': GMImages.kitchenCounter},
+  {'title': 'Meubles intérieurs', 'image': GMImages.bedroomSofa},
+  {'title': 'Meubles extérieurs', 'image': GMImages.bedroomBedBlack},
+  {'title': 'Portails', 'image': GMImages.bedroomSofa},
+  {'title': 'Mobilier personnalisé', 'image': GMImages.bedroomBedComforter},
 ];

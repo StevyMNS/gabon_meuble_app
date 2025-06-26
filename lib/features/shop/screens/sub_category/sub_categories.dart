@@ -7,18 +7,19 @@ import 'package:gabon_meuble_app/utils/constants/image_strings.dart';
 import 'package:gabon_meuble_app/utils/constants/sizes.dart';
 
 class SubCategoriesScreen extends StatelessWidget {
-  const SubCategoriesScreen({super.key});
+  final String categoryTitle;
+
+  const SubCategoriesScreen({super.key, required this.categoryTitle});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const GMAppBar(title: Text("Sport"), showBackArrow: true),
+      appBar: GMAppBar(title: Text(categoryTitle), showBackArrow: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(GSizes.defaultSpace),
           child: Column(
             children: [
-              /// Banner
               const GMRoundedImage(
                 width: double.infinity,
                 imageUrl: GMImages.promoBanner1,
@@ -26,13 +27,13 @@ class SubCategoriesScreen extends StatelessWidget {
               ),
               const SizedBox(height: GSizes.spaceBtwSections),
 
-              /// Sub Categories
               Column(
                 children: [
-                  /// Heading
-                  GMSectionHeading(title: "Sport Shirts", onPressed: () {}),
+                  GMSectionHeading(
+                    title: "Produits disponibles",
+                    onPressed: () {},
+                  ),
                   const SizedBox(height: GSizes.spaceBtwItems / 2),
-
                   SizedBox(
                     height: 120,
                     child: ListView.separated(
