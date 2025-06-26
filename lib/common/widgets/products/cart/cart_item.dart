@@ -36,7 +36,7 @@ class GMCartItem extends StatelessWidget {
               GMBrandTitleWithVerifiedIcon(title: "Nike"),
               Flexible(
                 child: GMProductTitleText(
-                  title: "Black Sports shoes",
+                  title: "Chaussures de sport noires",
                   maxLines: 1,
                 ),
               ),
@@ -46,15 +46,15 @@ class GMCartItem extends StatelessWidget {
                 TextSpan(
                   children: [
                     TextSpan(
-                      text: "Color ",
+                      text: "Couleur ",
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                     TextSpan(
-                      text: "Green ",
+                      text: "Vert ",
                       style: Theme.of(context).textTheme.bodyLarge,
                     ),
                     TextSpan(
-                      text: "Size ",
+                      text: "Taille ",
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                     TextSpan(

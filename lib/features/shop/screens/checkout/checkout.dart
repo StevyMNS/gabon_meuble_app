@@ -24,43 +24,43 @@ class CheckoutScreen extends StatelessWidget {
       appBar: GMAppBar(
         showBackArrow: true,
         title: Text(
-          "Order Review",
+          "Vérification de la commande",
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(GSizes.defaultSpace),
+          padding: const EdgeInsets.all(GSizes.defaultSpace),
           child: Column(
             children: [
-              /// -- Items in Cart
+              /// -- Articles dans le panier
               GMCartItems(showAddRemoveButtons: false),
-              SizedBox(height: GSizes.spaceBtwSections),
+              const SizedBox(height: GSizes.spaceBtwSections),
 
-              /// Coupon TextField
+              /// Code promo
               GMCouponCode(),
-              SizedBox(height: GSizes.spaceBtwSections),
+              const SizedBox(height: GSizes.spaceBtwSections),
 
-              /// -- Billing Section
+              /// -- Section Facturation
               GMRoundedContainer(
                 showBorder: true,
                 padding: const EdgeInsets.all(GSizes.md),
                 backgroundColor: dark ? GMColors.black : GMColors.white,
                 child: Column(
                   children: [
-                    /// Princing
+                    /// Total commande
                     GMBillingAmountSection(),
                     const SizedBox(height: GSizes.spaceBtwItems),
 
-                    /// Divider
+                    /// Séparateur
                     const Divider(),
                     const SizedBox(height: GSizes.spaceBtwItems),
 
-                    /// Payment Methods
+                    /// Moyens de paiement
                     GMBillingPaymentSection(),
                     const SizedBox(height: GSizes.spaceBtwItems),
 
-                    /// Address
+                    /// Adresse de livraison
                     GMBillingAddressSection(),
                   ],
                 ),
@@ -70,6 +70,7 @@ class CheckoutScreen extends StatelessWidget {
         ),
       ),
 
+      /// Bouton de confirmation
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(GSizes.defaultSpace),
         child: ElevatedButton(
@@ -77,12 +78,12 @@ class CheckoutScreen extends StatelessWidget {
               () => Get.to(
                 () => SuccessScreen(
                   image: GMImages.successfulPaymentIcon,
-                  title: "Payment Succes!",
-                  subTitle: "Your Item will be shipped soon!",
+                  title: "Paiement réussi !",
+                  subTitle: "Votre commande sera bientôt livrée.",
                   onPressed: () => Get.offAll(() => const NavigationMenu()),
                 ),
               ),
-          child: Text("Checkout \$256.0"),
+          child: const Text("Valider le paiement (256 FCFA)"),
         ),
       ),
     );

@@ -50,7 +50,7 @@ class ProductDetailScreen extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text("Checkout"),
+                      child: Text("Commander"),
                     ),
                   ),
                   const SizedBox(height: GSizes.spaceBtwSections),
@@ -62,11 +62,11 @@ class ProductDetailScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: GSizes.spaceBtwItems),
                   const ReadMoreText(
-                    "This is a product description for Blue Nike Steeve les vest. There are more things that can be done to make this text look better, but this is just a simple example of what you can do .",
+                    "Ceci est une description du produit pour la veste bleue Nike Steeve. Il y a plus de choses à faire pour améliorer ce texte, mais ceci est juste un exemple simple de ce que vous pouvez faire.",
                     trimLines: 2,
                     trimMode: TrimMode.Line,
-                    trimCollapsedText: " Show more",
-                    trimExpandedText: " less",
+                    trimCollapsedText: " Voir plus",
+                    trimExpandedText: " moins",
                     moreStyle: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w800,
@@ -84,7 +84,7 @@ class ProductDetailScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const GMSectionHeading(
-                        title: "Reviews (199)",
+                        title: "Avis (199)",
                         showActionButton: false,
                       ),
                       IconButton(

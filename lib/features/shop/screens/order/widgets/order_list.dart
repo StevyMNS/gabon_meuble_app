@@ -38,7 +38,7 @@ class GMOrderListItems extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Processing",
+                            "En cours de traitement",
                             style: Theme.of(context).textTheme.bodyLarge!.apply(
                               color: GMColors.primary,
                               fontWeightDelta: 1,
@@ -81,7 +81,7 @@ class GMOrderListItems extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Order",
+                                  "Commande",
                                   style:
                                       Theme.of(context).textTheme.labelMedium,
                                 ),
@@ -111,12 +111,12 @@ class GMOrderListItems extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Shipping Date",
+                                  "Date d'expédition",
                                   style:
                                       Theme.of(context).textTheme.labelMedium,
                                 ),
                                 Text(
-                                  "03 Feb 2025",
+                                  "03 Fév 2025",
                                   style:
                                       Theme.of(context).textTheme.titleMedium,
                                 ),

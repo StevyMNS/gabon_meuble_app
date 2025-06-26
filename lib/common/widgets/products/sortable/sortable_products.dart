@@ -17,12 +17,12 @@ class GMSortableProducts extends StatelessWidget {
           onChanged: (value) {},
           items:
               [
-                    'Name',
-                    'Higher Price',
-                    'lower Price',
-                    'Sale',
-                    'Newest',
-                    'Popularity',
+                    'Nom',
+                    'Prix decroissant',
+                    'prix croissant',
+                    'Promotion',
+                    'Nouveautés',
+                    'Popularité',
                   ]
                   .map(
                     (option) =>

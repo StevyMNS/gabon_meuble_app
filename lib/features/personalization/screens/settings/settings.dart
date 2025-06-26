@@ -28,7 +28,7 @@ class SettingsScreen extends StatelessWidget {
                 children: [
                   GMAppBar(
                     title: Text(
-                      "Account",
+                      "Compte",
                       style: Theme.of(
                         context,
                       ).textTheme.headlineMedium!.apply(color: GMColors.white),
@@ -51,77 +51,83 @@ class SettingsScreen extends StatelessWidget {
                 children: [
                   /// Account Settings
                   const GMSectionHeading(
-                    title: "Account Settings",
+                    title: "Paramètres du compte",
                     showActionButton: false,
                   ),
                   const SizedBox(height: GSizes.spaceBtwItems),
 
                   GMSettingsMenuTile(
                     icon: Iconsax.safe_home,
-                    title: "My Address",
-                    subtitle: "Set shopping delivery address",
+                    title: "Mes adresses",
+                    subtitle: "Définir l'adresse de livraison",
                     onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
                   const GMSettingsMenuTile(
                     icon: Iconsax.shopping_cart,
-                    title: "My Cart",
-                    subtitle: "Add, remove products and move to checkout",
+                    title: "Mon panier",
+                    subtitle:
+                        "Ajouter, retirer des produits et passer à la caisse",
                   ),
                   GMSettingsMenuTile(
                     icon: Iconsax.bag_tick,
-                    title: "My Orders",
-                    subtitle: "In-progress and completed orders",
+                    title: "Mes commandes",
+                    subtitle: "Commandes en cours et terminées",
                     onTap: () => Get.to(() => const OrderScreen()),
                   ),
                   const GMSettingsMenuTile(
                     icon: Iconsax.bank,
-                    title: "Bank Accounts",
-                    subtitle: "Withdraw balance to registered bank accounts",
+                    title: "Comptes bancaires",
+                    subtitle:
+                        "Retirer le solde vers les comptes bancaires enregistrés",
                   ),
                   const GMSettingsMenuTile(
                     icon: Iconsax.discount_shape,
-                    title: "My Coupons",
-                    subtitle: "List of all the discount coupons",
+                    title: "Mes coupons",
+                    subtitle: "Liste de tous les coupons de réduction",
                   ),
                   const GMSettingsMenuTile(
                     icon: Iconsax.notification,
                     title: "Notifications",
-                    subtitle: "Set any kind of notifications messages",
+                    subtitle: "Configurer les notifications",
                   ),
                   const GMSettingsMenuTile(
                     icon: Iconsax.security_card,
-                    title: "Account Privacy",
-                    subtitle: "Manage data usage and connected accounts",
+                    title: "Confidentialité du compte",
+                    subtitle:
+                        "Gérer l'utilisation des données et les comptes connectés",
                   ),
 
                   /// -- App Settings
                   SizedBox(height: GSizes.spaceBtwSections),
                   GMSectionHeading(
-                    title: "App Settings",
+                    title: "Paramètres de l'application",
                     showActionButton: false,
                   ),
                   SizedBox(height: GSizes.spaceBtwItems),
                   GMSettingsMenuTile(
                     icon: Iconsax.document_upload,
-                    title: "Load Data",
-                    subtitle: "Upload Data to your Cloud Firebase",
+                    title: "Charger des données",
+                    subtitle:
+                        "Télécharger les données sur votre Cloud Firebase",
                   ),
                   GMSettingsMenuTile(
                     icon: Iconsax.location,
-                    title: "Geolocation",
-                    subtitle: "Set recommendation based on location",
+                    title: "Géolocalisation",
+                    subtitle:
+                        "Définir les recommandations selon la localisation",
                     trailing: Switch(value: true, onChanged: (value) {}),
                   ),
                   GMSettingsMenuTile(
                     icon: Iconsax.security_user,
-                    title: "Safe Mode",
-                    subtitle: "Search result is safe for all ages",
+                    title: "Mode sécurisé",
+                    subtitle:
+                        "Les résultats de recherches sont sûrs pour tous les âges",
                     trailing: Switch(value: false, onChanged: (value) {}),
                   ),
                   GMSettingsMenuTile(
                     icon: Iconsax.image,
-                    title: "HD Image Quality",
-                    subtitle: "Set image quality to be seen",
+                    title: "Qualité d'image HD",
+                    subtitle: "Définir la qualité d'image à afficher",
                     trailing: Switch(value: false, onChanged: (value) {}),
                   ),
 
@@ -132,7 +138,7 @@ class SettingsScreen extends StatelessWidget {
                     child: OutlinedButton(
                       onPressed: () {},
                       child: Text(
-                        "Logout",
+                        "Déconnexion",
                         style: TextStyle(
                           color:
                               GMHelperFunctions.isDarkMode(context)

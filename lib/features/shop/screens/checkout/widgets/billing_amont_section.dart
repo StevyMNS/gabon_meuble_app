@@ -8,42 +8,48 @@ class GMBillingAmountSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        /// SubTotal
+        /// Sous-total
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("SubTotal", style: Theme.of(context).textTheme.bodyMedium),
-            Text("\$256.0", style: Theme.of(context).textTheme.bodyMedium),
+            Text("Sous-total", style: Theme.of(context).textTheme.bodyMedium),
+            Text("256 FCFA", style: Theme.of(context).textTheme.bodyMedium),
           ],
         ),
         const SizedBox(height: GSizes.spaceBtwItems / 2),
 
-        /// Shipping Fee
+        /// Frais de livraison
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Shipping Fee", style: Theme.of(context).textTheme.bodyMedium),
-            Text("\$6.0", style: Theme.of(context).textTheme.labelLarge),
+            Text(
+              "Frais de livraison",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            Text("6 FCFA", style: Theme.of(context).textTheme.labelLarge),
           ],
         ),
         const SizedBox(height: GSizes.spaceBtwItems / 2),
 
-        /// Tax Fee
+        /// Taxes
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Tax Fee", style: Theme.of(context).textTheme.bodyMedium),
-            Text("\$6.0", style: Theme.of(context).textTheme.labelLarge),
+            Text("Taxes", style: Theme.of(context).textTheme.bodyMedium),
+            Text("6 FCFA", style: Theme.of(context).textTheme.labelLarge),
           ],
         ),
         const SizedBox(height: GSizes.spaceBtwItems / 2),
 
-        /// Order Total
+        /// Total
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Order Total", style: Theme.of(context).textTheme.bodyMedium),
-            Text("\$6.0", style: Theme.of(context).textTheme.titleMedium),
+            Text(
+              "Total à payer",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            Text("268 FCFA", style: Theme.of(context).textTheme.titleMedium),
           ],
         ),
       ],

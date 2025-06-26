@@ -21,11 +21,11 @@ class GMCouponCode extends StatelessWidget {
       ),
       child: Row(
         children: [
-          /// TextField
+          /// Champ texte
           Flexible(
             child: TextFormField(
               decoration: const InputDecoration(
-                hintText: "Have a promo code? Enter here",
+                hintText: "Vous avez un code promo ? Entrez-le ici",
                 border: InputBorder.none,
                 focusedBorder: InputBorder.none,
                 enabledBorder: InputBorder.none,
@@ -35,7 +35,7 @@ class GMCouponCode extends StatelessWidget {
             ),
           ),
 
-          /// Button
+          /// Bouton appliquer
           SizedBox(
             width: 80,
             child: ElevatedButton(
@@ -43,12 +43,12 @@ class GMCouponCode extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 foregroundColor:
                     dark
-                        ? GMColors.white.withValues(alpha: 0.5)
-                        : GMColors.dark.withValues(alpha: 0.5),
-                backgroundColor: Colors.grey.withValues(alpha: 0.2),
-                side: BorderSide(color: Colors.grey.withValues(alpha: 0.1)),
+                        ? GMColors.white.withAlpha(120)
+                        : GMColors.dark.withAlpha(120),
+                backgroundColor: Colors.grey.withAlpha(40),
+                side: BorderSide(color: Colors.grey.withAlpha(30)),
               ),
-              child: const Text("Apply"),
+              child: const Text("Appliquer"),
             ),
           ),
         ],

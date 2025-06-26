@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gabon_meuble_app/features/personalization/screens/settings/settings.dart';
 import 'package:gabon_meuble_app/features/shop/screens/messagerie/messagerie.dart';
-import 'package:gabon_meuble_app/features/shop/screens/wishlist/wishlist.dart';
+import 'package:gabon_meuble_app/features/shop/screens/order/order.dart';
 import 'package:gabon_meuble_app/utils/constants/colors.dart';
 import 'package:gabon_meuble_app/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
@@ -57,8 +57,8 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    const StoreScreen(),
-    const FavouriteScreen(),
+    const ExplorerScreen(),
+    const OrderScreen(),
     const MessagesPage(),
     const SettingsScreen(),
   ];

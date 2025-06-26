@@ -13,7 +13,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const GMAppBar(showBackArrow: true, title: Text("Profile")),
+      appBar: const GMAppBar(showBackArrow: true, title: Text("Profil")),
 
       /// Body
       body: SingleChildScrollView(
@@ -33,7 +33,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: const Text("Change Profile Picture"),
+                      child: const Text("Changer la photo de profil"),
                     ),
                   ],
                 ),
@@ -46,14 +46,14 @@ class ProfileScreen extends StatelessWidget {
 
               /// Heading Profile Info
               const GMSectionHeading(
-                title: "Profile Information",
+                title: "Informations du profil",
                 showActionButton: false,
               ),
               const SizedBox(height: GSizes.spaceBtwItems),
 
-              GMProfileMenu(title: "Name", value: "John Doe", onPressed: () {}),
+              GMProfileMenu(title: "Nom", value: "John Doe", onPressed: () {}),
               GMProfileMenu(
-                title: "Username",
+                title: "Nom d'utilisateur",
                 value: "John Doe",
                 onPressed: () {},
               ),
@@ -64,13 +64,13 @@ class ProfileScreen extends StatelessWidget {
 
               /// Heading Personal Info
               const GMSectionHeading(
-                title: "Personal Information",
+                title: "Informations personnelles",
                 showActionButton: false,
               ),
               const SizedBox(height: GSizes.spaceBtwItems),
 
               GMProfileMenu(
-                title: "User ID",
+                title: "ID utilisateur",
                 value: "45826",
                 icon: Iconsax.copy,
                 onPressed: () {},
@@ -81,13 +81,13 @@ class ProfileScreen extends StatelessWidget {
                 onPressed: () {},
               ),
               GMProfileMenu(
-                title: "Phone Number",
+                title: "Numéro de téléphone",
                 value: "+241-77-777777",
                 onPressed: () {},
               ),
-              GMProfileMenu(title: "Gender", value: "Male", onPressed: () {}),
+              GMProfileMenu(title: "Genre", value: "Homme", onPressed: () {}),
               GMProfileMenu(
-                title: "Date of Birth",
+                title: "Date de naissance",
                 value: "10 Oct, 1994",
                 onPressed: () {},
               ),
@@ -98,7 +98,7 @@ class ProfileScreen extends StatelessWidget {
                 child: TextButton(
                   onPressed: () {},
                   child: Text(
-                    "Close Account",
+                    "Fermer le compte",
                     style: TextStyle(color: Colors.red),
                   ),
                 ),

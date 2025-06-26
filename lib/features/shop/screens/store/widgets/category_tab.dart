@@ -37,7 +37,7 @@ class GMCategoryTab extends StatelessWidget {
               const SizedBox(height: GSizes.spaceBtwItems),
 
               /// -- Products
-              GMSectionHeading(title: "you might like", onPressed: () {}),
+              GMSectionHeading(title: "vous pourriez aimer", onPressed: () {}),
               const SizedBox(height: GSizes.spaceBtwItems),
 
               GMGridLayout(

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gabon_meuble_app/features/shop/screens/cart/cart.dart';
+import 'package:gabon_meuble_app/common/widgets/products/products_cards/product_card_horizontal.dart';
+import 'package:gabon_meuble_app/features/shop/screens/order/order.dart';
+import 'package:gabon_meuble_app/features/shop/screens/wishlist/wishlist.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:gabon_meuble_app/utils/constants/sizes.dart';
 import 'package:gabon_meuble_app/utils/constants/image_strings.dart';
 import 'package:gabon_meuble_app/features/shop/screens/all_products/all_products.dart';
@@ -73,7 +74,7 @@ class HomeScreen extends StatelessWidget {
                   /// Commandes en cours
                   GMSectionHeading(
                     title: "Mes commandes",
-                    onPressed: () => Get.to(() => const CartScreen()),
+                    onPressed: () => Get.to(() => const OrderScreen()),
                   ),
                   const SizedBox(height: GSizes.spaceBtwItems),
                   OrderCard(
@@ -128,6 +129,20 @@ class HomeScreen extends StatelessWidget {
                   GMGridLayout(
                     itemCount: 2,
                     itemBuilder: (_, index) => const GMProductCardVertical(),
+                  ),
+
+                  const SizedBox(height: GSizes.spaceBtwSections),
+
+                  /// Suggestions personnalisées
+                  GMSectionHeading(
+                    title: "Liste de Favoris",
+                    showActionButton: true,
+                    onPressed: () => Get.to(() => const FavouriteScreen()),
+                  ),
+                  const SizedBox(height: GSizes.spaceBtwItems),
+                  GMGridLayout(
+                    itemCount: 2,
+                    itemBuilder: (_, index) => const GMProductCardHorizontal(),
                   ),
                 ],
               ),

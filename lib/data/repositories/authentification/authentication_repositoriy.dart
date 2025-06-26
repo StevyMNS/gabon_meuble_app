@@ -67,7 +67,7 @@ class AuthenticationRepositoriy extends GetxController {
     } on PlatformException catch (e) {
       throw GMPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw 'Une erreur est survenue. Veuillez réessayer.';
     }
   }
 
@@ -90,7 +90,7 @@ class AuthenticationRepositoriy extends GetxController {
     } on PlatformException catch (e) {
       throw GMPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw 'Une erreur est survenue. Veuillez réessayer.';
     }
   }
 
@@ -107,7 +107,7 @@ class AuthenticationRepositoriy extends GetxController {
     } on PlatformException catch (e) {
       throw GMPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw 'Une erreur est survenue. Veuillez réessayer.';
     }
   }
 
@@ -125,7 +125,7 @@ class AuthenticationRepositoriy extends GetxController {
     } on PlatformException catch (e) {
       throw GMPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw 'Une erreur est survenue. Veuillez réessayer.';
     }
   }
 }

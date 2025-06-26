@@ -13,14 +13,17 @@ class AllBrandsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const GMAppBar(title: Text("Brand"), showBackArrow: true),
+      appBar: const GMAppBar(title: Text("Ateliers"), showBackArrow: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(GSizes.defaultSpace),
           child: Column(
             children: [
               /// Heading
-              const GMSectionHeading(title: "brand", showActionButton: false),
+              const GMSectionHeading(
+                title: "ateliers",
+                showActionButton: false,
+              ),
               const SizedBox(height: GSizes.spaceBtwItems),
 
               /// -- Brands

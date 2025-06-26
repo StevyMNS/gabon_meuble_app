@@ -10,7 +10,7 @@ class AllProducts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       /// AppBar
-      appBar: GMAppBar(title: Text("Popular Products"), showBackArrow: true),
+      appBar: GMAppBar(title: Text("Produits Populaires"), showBackArrow: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(GSizes.defaultSpace),

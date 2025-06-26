@@ -64,27 +64,3 @@ class GMBrandCard extends StatelessWidget {
     );
   }
 }
-
-final List<Map<String, dynamic>> gmBrands = [
-  {
-    "name": "Atelier Mbadinga",
-    "image": GMImages.clothIcon,
-    "location": "Libreville",
-    "speciality": "Menuiserie",
-    "isVerified": true,
-  },
-  {
-    "name": "Atelier Mvoula",
-    "image": GMImages.clothIcon,
-    "location": "Port-Gentil",
-    "speciality": "Menuiserie",
-    "isVerified": false,
-  },
-  {
-    "name": "Atelier Ngoma",
-    "image": GMImages.clothIcon,
-    "location": "Franceville",
-    "speciality": "Menuiserie",
-    "isVerified": true,
-  },
-];

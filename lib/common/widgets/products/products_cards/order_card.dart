@@ -5,8 +5,14 @@ import 'package:gabon_meuble_app/utils/helpers/helper_functions.dart';
 class OrderCard extends StatelessWidget {
   final String productName;
   final String status;
+  final VoidCallback? onPressed;
 
-  const OrderCard({super.key, required this.productName, required this.status});
+  const OrderCard({
+    super.key,
+    required this.productName,
+    required this.status,
+    this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +26,7 @@ class OrderCard extends StatelessWidget {
         leading: const Icon(Icons.chair_alt),
         title: Text(productName),
         subtitle: Text("Statut : $status"),
-        trailing: TextButton(onPressed: () {}, child: const Text("Suivre")),
+        trailing: TextButton(onPressed: onPressed, child: const Text("Suivre")),
       ),
     );
   }

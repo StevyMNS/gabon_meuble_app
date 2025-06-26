@@ -59,9 +59,9 @@ class GMProductMetaData extends StatelessWidget {
         /// Stack Status
         Row(
           children: [
-            const GMProductTitleText(title: "Stautus"),
+            const GMProductTitleText(title: "Statut"),
             const SizedBox(width: GSizes.spaceBtwItems),
-            Text("In Stock", style: Theme.of(context).textTheme.titleMedium),
+            Text("En stock", style: Theme.of(context).textTheme.titleMedium),
           ],
         ),
         const SizedBox(height: GSizes.spaceBtwItems / 1.5),

@@ -11,7 +11,7 @@ class OrderScreen extends StatelessWidget {
     return Scaffold(
       appBar: GMAppBar(
         title: Text(
-          "My Orders",
+          "Mes commandes",
           style: Theme.of(context).textTheme.headlineSmall,
         ),
         showBackArrow: true,

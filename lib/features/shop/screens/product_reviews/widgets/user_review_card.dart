@@ -42,11 +42,11 @@ class UserReviewCard extends StatelessWidget {
         ),
         const SizedBox(height: GSizes.spaceBtwItems),
         const ReadMoreText(
-          "The user interface of the app is quite intuitive. I was able to navigate and make purchases seamlessly. Great Job!",
+          "L'interface utilisateur de l'application est très intuitive. J'ai pu naviguer et faire des achats sans problème. Très bon travail!",
           trimLines: 2,
           trimMode: TrimMode.Line,
-          trimExpandedText: "show less",
-          trimCollapsedText: "show more",
+          trimExpandedText: "voir moins",
+          trimCollapsedText: "voir plus",
           moreStyle: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
@@ -71,7 +71,7 @@ class UserReviewCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "GM's Store",
+                      "Boutique GM",
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     Text(
@@ -82,11 +82,11 @@ class UserReviewCard extends StatelessWidget {
                 ),
                 const SizedBox(height: GSizes.spaceBtwItems),
                 const ReadMoreText(
-                  "The user interface of the app is quite intuitive. I was able to navigate and make purchases seamlessly. Great Job!",
+                  "L'interface utilisateur de l'application est très intuitive. J'ai pu naviguer et effectuer des achats facilement. Excellent Travail !",
                   trimLines: 2,
                   trimMode: TrimMode.Line,
-                  trimExpandedText: "show less",
-                  trimCollapsedText: "show more",
+                  trimExpandedText: "voir moins",
+                  trimCollapsedText: "voir plus",
                   moreStyle: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gabon_meuble_app/common/widgets/appbar/appbar.dart';
 import 'package:gabon_meuble_app/features/shop/screens/chat/chat.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 
 class MessagesPage extends StatelessWidget {
   const MessagesPage({super.key});
@@ -29,17 +31,15 @@ class MessagesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F0),
-      appBar: AppBar(
-        backgroundColor: const Color(0xFF1B4D3E),
-        title: const Text(
-          'Messagerie',
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'Montserrat',
-            fontWeight: FontWeight.bold,
-          ),
+      appBar: GMAppBar(
+        showBackArrow: true,
+        title: Text(
+          "Messagerie",
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
+        actions: [
+          IconButton(icon: const Icon(Iconsax.search_normal), onPressed: () {}),
+        ],
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),

@@ -16,7 +16,7 @@ class FavouriteScreen extends StatelessWidget {
     return Scaffold(
       appBar: GMAppBar(
         title: Text(
-          "Wishlist",
+          "Favoris",
           style: Theme.of(context).textTheme.headlineMedium,
         ),
         actions: [

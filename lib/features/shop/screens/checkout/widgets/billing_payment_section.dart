@@ -15,8 +15,8 @@ class GMBillingPaymentSection extends StatelessWidget {
     return Column(
       children: [
         GMSectionHeading(
-          title: "Payment Method",
-          buttonTitle: "Change",
+          title: "Moyen de paiement",
+          buttonTitle: "Modifier",
           onPressed: () {},
         ),
         const SizedBox(height: GSizes.spaceBtwItems / 2),
@@ -32,7 +32,7 @@ class GMBillingPaymentSection extends StatelessWidget {
                 fit: BoxFit.contain,
               ),
             ),
-            const SizedBox(height: GSizes.spaceBtwItems / 2),
+            const SizedBox(width: GSizes.spaceBtwItems / 2),
             Text("PayPal", style: Theme.of(context).textTheme.bodyLarge),
           ],
         ),

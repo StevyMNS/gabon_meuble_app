@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gabon_meuble_app/features/shop/screens/chat/chat.dart';
 import 'package:gabon_meuble_app/utils/constants/colors.dart';
 import 'package:gabon_meuble_app/utils/helpers/helper_functions.dart';
+import 'package:get/get.dart';
 
 class ArtisanCard extends StatelessWidget {
   final String name;
@@ -29,9 +31,8 @@ class ArtisanCard extends StatelessWidget {
         title: Text(name, style: const TextStyle(fontWeight: FontWeight.bold)),
         subtitle: Text("$speciality - $location"),
         trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-        onTap: () {
-          // TODO: Naviguer vers la fiche artisan
-        },
+        onTap:
+            () => Get.to(() => const ChatScreen(artisanName: 'Jean Mbadinga')),
       ),
     );
   }

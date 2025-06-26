@@ -13,7 +13,7 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: GMAppBar(
         showBackArrow: true,
-        title: Text("cart", style: Theme.of(context).textTheme.headlineSmall),
+        title: Text("panier", style: Theme.of(context).textTheme.headlineSmall),
       ),
       body: Padding(
         padding: const EdgeInsets.all(GSizes.defaultSpace),
@@ -27,7 +27,7 @@ class CartScreen extends StatelessWidget {
         padding: const EdgeInsets.all(GSizes.defaultSpace),
         child: ElevatedButton(
           onPressed: () => Get.to(() => const CheckoutScreen()),
-          child: Text("Checkout \$256.0"),
+          child: Text("Vérification de la commande \$256.0"),
         ),
       ),
     );
