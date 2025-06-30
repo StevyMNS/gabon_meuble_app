@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gabon_meuble_app/common/widgets/products/products_cards/product_card_horizontal.dart';
+import 'package:gabon_meuble_app/common/widgets/images/gm_rounded_image.dart';
+import 'package:gabon_meuble_app/features/shop/screens/compare/compare_product.dart';
 import 'package:gabon_meuble_app/features/shop/screens/order/order.dart';
 import 'package:gabon_meuble_app/features/shop/screens/wishlist/wishlist.dart';
 import 'package:get/get.dart';
@@ -32,9 +33,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   GMHomeAppBar(),
                   SizedBox(height: GSizes.spaceBtwSections),
-                  GMSearchContainer(
-                    text: "Recherchez un produit ou un artisan...",
-                  ),
+                  GMSearchContainer(text: "Recherchez un produit..."),
                   SizedBox(height: GSizes.spaceBtwSections),
                   Padding(
                     padding: EdgeInsets.only(left: GSizes.defaultSpace),
@@ -97,13 +96,24 @@ class HomeScreen extends StatelessWidget {
                     name: "Jean Mbadinga",
                     speciality: "Menuisier",
                     location: "Libreville",
-                    image: "assets/images/reviews/review_profile_image_3.jpeg",
+                    image: "assets/images/content/jean.jpeg",
                   ),
                   ArtisanCard(
                     name: "Sarah Ndong",
                     speciality: "Soudeuse",
                     location: "Port-Gentil",
-                    image: "assets/images/reviews/review_profile_image_1.jpg",
+                    image: "assets/images/content/ndong.jpeg",
+                  ),
+                  const SizedBox(height: GSizes.spaceBtwSections),
+                  ElevatedButton.icon(
+                    icon: const Icon(Icons.compare_arrows),
+                    label: const Text("Comparer les prix"),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size.fromHeight(48),
+                    ),
+                    onPressed: () {
+                      Get.to(() => CompareProductsScreen());
+                    },
                   ),
                   const SizedBox(height: GSizes.spaceBtwSections),
 
@@ -115,7 +125,16 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: GSizes.spaceBtwItems),
                   GMGridLayout(
                     itemCount: 2,
-                    itemBuilder: (_, index) => const GMProductCardVertical(),
+                    itemBuilder:
+                        (_, index) => const GMProductCardVertical(
+                          widget: GMRoundedImage(
+                            height: 120,
+                            imageUrl: GMImages.productImage1,
+                            applyImageRadius: true,
+                          ),
+                          titleProduct: "Portail vert avec motif doré",
+                          nameBrand: "Sarah Ndong",
+                        ),
                   ),
 
                   const SizedBox(height: GSizes.spaceBtwSections),
@@ -128,7 +147,15 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: GSizes.spaceBtwItems),
                   GMGridLayout(
                     itemCount: 2,
-                    itemBuilder: (_, index) => const GMProductCardVertical(),
+                    itemBuilder:
+                        (_, index) => const GMProductCardVertical(
+                          widget: GMRoundedImage(
+                            imageUrl: GMImages.productImage2,
+                            applyImageRadius: true,
+                          ),
+                          titleProduct: "Salon gris de 8 places",
+                          nameBrand: "Jean Mbadinga",
+                        ),
                   ),
 
                   const SizedBox(height: GSizes.spaceBtwSections),
@@ -141,8 +168,16 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: GSizes.spaceBtwItems),
                   GMGridLayout(
-                    itemCount: 2,
-                    itemBuilder: (_, index) => const GMProductCardHorizontal(),
+                    itemCount: 4,
+                    itemBuilder:
+                        (_, index) => const GMProductCardVertical(
+                          widget: GMRoundedImage(
+                            imageUrl: GMImages.productImage3,
+                            applyImageRadius: true,
+                          ),
+                          titleProduct: "Grille de fenetres",
+                          nameBrand: "Sarah Ndong",
+                        ),
                   ),
                 ],
               ),

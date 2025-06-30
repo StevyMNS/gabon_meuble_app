@@ -20,5 +20,6 @@ void main() async {
     Get.put(AuthenticationRepositoriy());
     Get.put(NetworkManager());
   });
-  runApp(DevicePreview(builder: (context) => MyApp()));
+  //runApp(DevicePreview(builder: (context) => MyApp()));
+  runApp(MyApp());
 }

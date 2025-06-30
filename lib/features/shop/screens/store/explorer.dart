@@ -6,6 +6,7 @@ import 'package:gabon_meuble_app/common/widgets/layouts/grid_layout.dart';
 import 'package:gabon_meuble_app/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:gabon_meuble_app/common/widgets/texts/section_heading.dart';
 import 'package:gabon_meuble_app/features/shop/screens/brand/all_brands.dart';
+import 'package:gabon_meuble_app/features/shop/screens/brand/brand_products.dart';
 import 'package:gabon_meuble_app/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:gabon_meuble_app/utils/constants/colors.dart';
 import 'package:gabon_meuble_app/utils/constants/sizes.dart';
@@ -50,7 +51,7 @@ class ExplorerScreen extends StatelessWidget {
 
                       /// Barre de recherche
                       const GMSearchContainer(
-                        text: "Rechercher un artisan ou un produit...",
+                        text: "Rechercher un produit...",
                         showBorder: true,
                         showBackground: false,
                         padding: EdgeInsets.zero,
@@ -64,11 +65,15 @@ class ExplorerScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: GSizes.spaceBtwItems / 1.5),
 
-                      GMGridLayout(
-                        itemCount: 4,
-                        mainAxisExtent: 80,
-                        itemBuilder:
-                            (_, index) => const GMBrandCard(showBorder: false),
+                      GestureDetector(
+                        onTap: () => Get.to(() => const BrandProducts()),
+                        child: GMGridLayout(
+                          itemCount: 4,
+                          mainAxisExtent: 80,
+                          itemBuilder:
+                              (_, index) =>
+                                  const GMBrandCard(showBorder: false),
+                        ),
                       ),
                     ],
                   ),

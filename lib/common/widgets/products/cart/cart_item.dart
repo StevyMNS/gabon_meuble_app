@@ -33,10 +33,10 @@ class GMCartItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              GMBrandTitleWithVerifiedIcon(title: "Nike"),
+              GMBrandTitleWithVerifiedIcon(title: "Sarah Ndong"),
               Flexible(
                 child: GMProductTitleText(
-                  title: "Chaussures de sport noires",
+                  title: "Portail vert à motifs dorés",
                   maxLines: 1,
                 ),
               ),
@@ -58,7 +58,7 @@ class GMCartItem extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                     TextSpan(
-                      text: "UK 08",
+                      text: "2.5m",
                       style: Theme.of(context).textTheme.bodyLarge,
                     ),
                   ],

@@ -66,14 +66,13 @@ class GMImages {
       "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
 
   // -- Products
-  static const String productImage1 = "assets/images/products/nike-shoes.png";
-  static const String productImage2 = "assets/images/products/product-1.png";
+  static const String productImage1 = "assets/images/content/partailvert.jpeg";
+  static const String productImage2 = "assets/images/content/salon2.jpeg";
   static const String productImage3 =
-      "assets/images/products/product-jacket.png";
-  static const String productImage4 =
-      "assets/images/products/product-jeans.png";
+      "assets/images/content/imagesoudure1.jpeg";
+  static const String productImage4 = "assets/images/content/portail_noir.jpeg";
   static const String productImage5 =
-      "assets/images/products/product-shirt.png";
+      "assets/images/content/portail_blanc_rouge.jpeg";
   static const String productImage6 =
       "assets/images/products/product-slippers.png";
   static const String productImage7 =
@@ -226,7 +225,7 @@ class GMImages {
 
   //Banners
   static const String promoBanner1 =
-      "assets/images/products/promo-banner-1.png";
+      "assets/images/content/portail_rouge_bordeau.jpeg";
   static const String promoBanner2 =
       "assets/images/products/promo-banner-2.png";
   static const String promoBanner3 =
@@ -250,7 +249,7 @@ class GMImages {
       "assets/icons/payment_methods/credit-card.png";
   static const String masterCard =
       "assets/icons/payment_methods/master-card.png";
-  static const String paypal = "assets/icons/payment_methods/paypal.png";
+  static const String airtel = "assets/images/content/airtelmoney.png";
   static const String visa = "assets/icons/payment_methods/visa.png";
   static const String paystack = "assets/icons/payment_methods/paystack.png";
   static const String paytm = "assets/icons/payment_methods/paytm.png";
@@ -258,13 +257,11 @@ class GMImages {
       "assets/icons/payment_methods/successful_payment_icon.png";
 
   // -- Catégories
-  static const bedroomWardrobe = 'assets/images/products/bedroom_wardrobe.png';
-  static const bedroomSofa = 'assets/images/products/bedroom_sofa.png';
-  static const bedroomBedBlack = 'assets/images/products/bedroom_bed_black.png';
-  static const bedroomBedComforter =
-      'assets/images/products/bedroom_bed_with_comforter.png';
-  static const kitchenCounter = 'assets/images/products/kitchen_counter.png';
-  static const kitchenDiningTable =
-      'assets/images/products/kitchen_dining_table.png';
+  static const menuserie = 'assets/images/content/62ecd68834abb-artisans.jpg';
+  static const soudure = 'assets/images/content/soudure.jpg';
+  static const meubles = 'assets/images/content/meuble1.jpeg';
+  static const decoration = 'assets/images/content/decoration1.jpg';
+  static const local = 'assets/images/content/100local.jpg';
+  static const personnaliser = 'assets/images/content/personnaliser1.jpg';
   static const portails = 'assets/images/banners/promo_banner_1.png';
 }

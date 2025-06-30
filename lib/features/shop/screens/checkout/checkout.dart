@@ -83,7 +83,7 @@ class CheckoutScreen extends StatelessWidget {
                   onPressed: () => Get.offAll(() => const NavigationMenu()),
                 ),
               ),
-          child: const Text("Valider le paiement (256 FCFA)"),
+          child: const Text("Valider le paiement 1500000 Fcfa"),
         ),
       ),
     );

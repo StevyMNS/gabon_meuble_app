@@ -13,7 +13,7 @@ class GMBillingAmountSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text("Sous-total", style: Theme.of(context).textTheme.bodyMedium),
-            Text("256 FCFA", style: Theme.of(context).textTheme.bodyMedium),
+            Text("1300000 FCFA", style: Theme.of(context).textTheme.bodyMedium),
           ],
         ),
         const SizedBox(height: GSizes.spaceBtwItems / 2),
@@ -26,7 +26,7 @@ class GMBillingAmountSection extends StatelessWidget {
               "Frais de livraison",
               style: Theme.of(context).textTheme.bodyMedium,
             ),
-            Text("6 FCFA", style: Theme.of(context).textTheme.labelLarge),
+            Text("14000 FCFA", style: Theme.of(context).textTheme.labelLarge),
           ],
         ),
         const SizedBox(height: GSizes.spaceBtwItems / 2),
@@ -36,7 +36,7 @@ class GMBillingAmountSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text("Taxes", style: Theme.of(context).textTheme.bodyMedium),
-            Text("6 FCFA", style: Theme.of(context).textTheme.labelLarge),
+            Text("6000 FCFA", style: Theme.of(context).textTheme.labelLarge),
           ],
         ),
         const SizedBox(height: GSizes.spaceBtwItems / 2),
@@ -49,7 +49,10 @@ class GMBillingAmountSection extends StatelessWidget {
               "Total à payer",
               style: Theme.of(context).textTheme.bodyMedium,
             ),
-            Text("268 FCFA", style: Theme.of(context).textTheme.titleMedium),
+            Text(
+              "1500000 FCFA",
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
           ],
         ),
       ],

@@ -31,10 +31,10 @@ class GMHomeCategories extends StatelessWidget {
 }
 
 final List<Map<String, String>> _categories = [
-  {'title': 'Menuiserie', 'image': GMImages.bedroomWardrobe},
-  {'title': 'Soudure', 'image': GMImages.kitchenCounter},
-  {'title': 'Meubles intérieurs', 'image': GMImages.bedroomSofa},
-  {'title': 'Meubles extérieurs', 'image': GMImages.bedroomBedBlack},
-  {'title': 'Portails', 'image': GMImages.bedroomSofa},
-  {'title': 'Mobilier personnalisé', 'image': GMImages.bedroomBedComforter},
+  {'title': 'Menuiserie', 'image': GMImages.menuserie},
+  {'title': 'Soudure', 'image': GMImages.soudure},
+  {'title': 'Meubles', 'image': GMImages.meubles},
+  {'title': 'Decoration', 'image': GMImages.decoration},
+  {'title': '100% local', 'image': GMImages.local},
+  {'title': 'Mobilier personnalisé', 'image': GMImages.personnaliser},
 ];

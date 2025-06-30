@@ -26,7 +26,7 @@ class GMProductImageSlider extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(GSizes.productImageRadius * 2),
                 child: Center(
-                  child: Image(image: AssetImage(GMImages.productImage5)),
+                  child: Image(image: AssetImage(GMImages.productImage1)),
                 ),
               ),
             ),

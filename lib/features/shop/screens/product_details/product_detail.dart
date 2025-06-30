@@ -62,7 +62,7 @@ class ProductDetailScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: GSizes.spaceBtwItems),
                   const ReadMoreText(
-                    "Ceci est une description du produit pour la veste bleue Nike Steeve. Il y a plus de choses à faire pour améliorer ce texte, mais ceci est juste un exemple simple de ce que vous pouvez faire.",
+                    "Ceci est une description du produit pour le portail vert. Il y a plus de choses à faire pour améliorer ce texte, mais ceci est juste un exemple simple de ce que vous pouvez faire.",
                     trimLines: 2,
                     trimMode: TrimMode.Line,
                     trimCollapsedText: " Voir plus",

@@ -36,20 +36,21 @@ class GMProductAttributes extends StatelessWidget {
                       Row(
                         children: [
                           const GMProductTitleText(
-                            title: "Price :",
+                            title: "Prix :",
                             smallSize: true,
                           ),
 
                           /// Actual Price
                           Text(
-                            "\$25",
-                            style: Theme.of(context).textTheme.titleSmall!
-                                .apply(decoration: TextDecoration.lineThrough),
+                            "5000 F",
+                            style: Theme.of(context).textTheme.bodySmall!.apply(
+                              decoration: TextDecoration.lineThrough,
+                            ),
                           ),
-                          const SizedBox(width: GSizes.spaceBtwItems),
+                          const SizedBox(width: GSizes.spaceBtwItems / 2),
 
                           /// Sale Price
-                          const GMProductPriceText(price: "20"),
+                          const GMProductPriceText(price: "1.2M"),
                         ],
                       ),
                       Row(
@@ -59,7 +60,7 @@ class GMProductAttributes extends StatelessWidget {
                             smallSize: true,
                           ),
                           Text(
-                            "In Stock",
+                            "En Stock",
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ],
@@ -71,8 +72,7 @@ class GMProductAttributes extends StatelessWidget {
 
               /// Variation Description
               const GMProductTitleText(
-                title:
-                    "This is the description of product and it can go up to max 4 lines",
+                title: "Grand Portail vert avec motif doré",
                 smallSize: true,
                 maxLines: 4,
               ),
@@ -85,23 +85,23 @@ class GMProductAttributes extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const GMSectionHeading(title: "Colors", showActionButton: false),
+            const GMSectionHeading(title: "Coleur", showActionButton: false),
             const SizedBox(height: GSizes.spaceBtwItems / 2),
             Wrap(
               spacing: 8,
               children: [
                 GMChoiceChip(
-                  text: "Green",
-                  selected: false,
-                  onSelected: (value) {},
-                ),
-                GMChoiceChip(
-                  text: "Blue",
+                  text: "Vert",
                   selected: true,
                   onSelected: (value) {},
                 ),
                 GMChoiceChip(
-                  text: "Yellow",
+                  text: "Bleu",
+                  selected: false,
+                  onSelected: (value) {},
+                ),
+                GMChoiceChip(
+                  text: "Jaune",
                   selected: false,
                   onSelected: (value) {},
                 ),
@@ -112,23 +112,23 @@ class GMProductAttributes extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const GMSectionHeading(title: "Size", showActionButton: false),
+            const GMSectionHeading(title: "Taille", showActionButton: false),
             const SizedBox(height: GSizes.spaceBtwItems / 2),
             Wrap(
               spacing: 8,
               children: [
                 GMChoiceChip(
-                  text: "EU 34",
+                  text: "2m",
                   selected: true,
                   onSelected: (value) {},
                 ),
                 GMChoiceChip(
-                  text: "EU 36",
+                  text: "3m",
                   selected: false,
                   onSelected: (value) {},
                 ),
                 GMChoiceChip(
-                  text: "EU 38",
+                  text: "4m",
                   selected: false,
                   onSelected: (value) {},
                 ),

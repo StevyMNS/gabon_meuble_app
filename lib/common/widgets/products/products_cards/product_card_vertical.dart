@@ -16,7 +16,16 @@ import '../../icons/gm_circular_icon.dart';
 import '../products_price/product_price_text.dart';
 
 class GMProductCardVertical extends StatelessWidget {
-  const GMProductCardVertical({super.key});
+  const GMProductCardVertical({
+    super.key,
+    required this.widget,
+    required this.titleProduct,
+    required this.nameBrand,
+  });
+
+  final Widget widget;
+  final String titleProduct;
+  final String nameBrand;
 
   @override
   Widget build(BuildContext context) {
@@ -37,16 +46,13 @@ class GMProductCardVertical extends StatelessWidget {
           children: [
             /// Thumbnail, WishList Button, Discount Tag
             GMRoundedContainer(
-              height: 180,
+              height: 120,
               padding: const EdgeInsets.all(GSizes.sm),
               backgroundColor: dark ? GMColors.dark : GMColors.light,
               child: Stack(
                 children: [
                   /// -- Thumbnail Image
-                  const GMRoundedImage(
-                    imageUrl: GMImages.productImage1,
-                    applyImageRadius: true,
-                  ),
+                  widget,
 
                   /// -- Sale Tag
                   Positioned(
@@ -84,19 +90,16 @@ class GMProductCardVertical extends StatelessWidget {
             const SizedBox(height: GSizes.spaceBtwItems / 2),
 
             /// -- Details
-            const Padding(
-              padding: EdgeInsets.only(left: GSizes.sm),
+            Padding(
+              padding: const EdgeInsets.only(left: GSizes.sm),
               child: SizedBox(
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    GMProductTitleText(
-                      title: "Green Nike Air Shoes",
-                      smallSize: true,
-                    ),
-                    SizedBox(height: GSizes.spaceBtwItems / 2),
-                    GMBrandTitleWithVerifiedIcon(title: "Nike"),
+                    GMProductTitleText(title: titleProduct, smallSize: true),
+                    const SizedBox(height: GSizes.spaceBtwItems / 2),
+                    GMBrandTitleWithVerifiedIcon(title: nameBrand),
                   ],
                 ),
               ),
@@ -110,7 +113,7 @@ class GMProductCardVertical extends StatelessWidget {
                 /// Price
                 const Padding(
                   padding: EdgeInsets.only(left: GSizes.sm),
-                  child: GMProductPriceText(price: '35.0'),
+                  child: GMProductPriceText(price: '1500000'),
                 ),
 
                 /// Add to Cart Button

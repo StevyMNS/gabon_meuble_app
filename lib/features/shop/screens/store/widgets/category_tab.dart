@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gabon_meuble_app/common/widgets/brands/brand_show_case.dart';
+import 'package:gabon_meuble_app/common/widgets/images/gm_rounded_image.dart';
 import 'package:gabon_meuble_app/common/widgets/layouts/grid_layout.dart';
 import 'package:gabon_meuble_app/common/widgets/products/products_cards/product_card_vertical.dart';
 import 'package:gabon_meuble_app/common/widgets/texts/section_heading.dart';
@@ -42,7 +43,13 @@ class GMCategoryTab extends StatelessWidget {
 
               GMGridLayout(
                 itemCount: 4,
-                itemBuilder: (_, index) => const GMProductCardVertical(),
+                itemBuilder:
+                    (_, index) => const GMProductCardVertical(
+                      widget: GMRoundedImage(
+                        imageUrl: GMImages.productImage1,
+                        applyImageRadius: true,
+                      ), titleProduct: "Portail vert avec motif doré", nameBrand: "Sarah Ndong",
+                    ),
               ),
               const SizedBox(height: GSizes.spaceBtwItems),
             ],

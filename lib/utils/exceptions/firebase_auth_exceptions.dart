@@ -1,106 +1,94 @@
-/// Custom exception class to handle various Firebase authentication-related errors.
 class GMFirebaseAuthException implements Exception {
-  /// The error code associated with the exception.
   final String code;
 
-  /// Constructor that takes an error code.
   GMFirebaseAuthException(this.code);
 
-  /// Get the corresponding error message based on the error code.
   String get message {
     switch (code) {
       case 'email-already-in-use':
-        return 'The email address is already registered. Please use a different email.';
+        return "L'adresse e-mail est déjà enregistrée. Veuillez utiliser une autre adresse e-mail.";
       case 'invalid-email':
-        return 'The email address provided is invalid. Please enter a valid email.';
+        return "L'adresse e-mail fournie est invalide. Veuillez saisir une adresse e-mail valide.";
       case 'weak-password':
-        return 'The password is too weak. Please choose a stronger password.';
+        return "Le mot de passe est trop faible. Veuillez choisir un mot de passe plus sécurisé.";
       case 'user-disabled':
-        return 'This user account has been disabled. Please contact support for assistance.';
+        return "Ce compte utilisateur a été désactivé. Veuillez contacter le support pour obtenir de l'aide.";
       case 'user-not-found':
-        return 'Invalid login details. User not found.';
+        return "Identifiants de connexion invalides. Utilisateur non trouvé.";
       case 'wrong-password':
-        return 'Incorrect password. Please check your password and try again.';
+        return "Mot de passe incorrect. Veuillez vérifier votre mot de passe et réessayer.";
       case 'invalid-verification-code':
-        return 'Invalid verification code. Please enter a valid code.';
+        return "Code de vérification invalide. Veuillez saisir un code valide.";
       case 'invalid-verification-id':
-        return 'Invalid verification ID. Please request a new verification code.';
+        return "ID de vérification invalide. Veuillez demander un nouveau code de vérification.";
       case 'quota-exceeded':
-        return 'Quota exceeded. Please try again later.';
+        return "Quota dépassé. Veuillez réessayer plus tard.";
       case 'email-already-exists':
-        return 'The email address already exists. Please use a different email.';
+        return "L'adresse e-mail existe déjà. Veuillez utiliser une autre adresse e-mail.";
       case 'provider-already-linked':
-        return 'The account is already linked with another provider.';
+        return "Le compte est déjà lié à un autre fournisseur.";
       case 'requires-recent-login':
-        return 'This operation is sensitive and requires recent authentication. Please log in again.';
+        return "Cette opération est sensible et nécessite une authentification récente. Veuillez vous reconnecter.";
       case 'credential-already-in-use':
-        return 'This credential is already associated with a different user account.';
+        return "Ces identifiants sont déjà associés à un autre compte utilisateur.";
       case 'user-mismatch':
-        return 'The supplied credentials do not correspond to the previously signed in user.';
+        return "Les identifiants fournis ne correspondent pas à l'utilisateur précédemment connecté.";
       case 'account-exists-with-different-credential':
-        return 'An account already exists with the same email but different sign-in credentials.';
+        return "Un compte existe déjà avec la même adresse e-mail mais avec des identifiants différents.";
       case 'operation-not-allowed':
-        return 'This operation is not allowed. Contact support for assistance.';
+        return "Cette opération n'est pas autorisée. Contactez le support pour obtenir de l'aide.";
       case 'expired-action-code':
-        return 'The action code has expired. Please request a new action code.';
+        return "Le code d'action a expiré. Veuillez demander un nouveau code.";
       case 'invalid-action-code':
-        return 'The action code is invalid. Please check the code and try again.';
+        return "Le code d'action est invalide. Veuillez vérifier le code et réessayer.";
       case 'missing-action-code':
-        return 'The action code is missing. Please provide a valid action code.';
+        return "Le code d'action est manquant. Veuillez fournir un code valide.";
       case 'user-token-expired':
-        return 'The user\'s token has expired, and authentication is required. Please sign in again.';
-      case 'user-not-found':
-        return 'No user found for the given email or UID.';
+        return "Le jeton de l'utilisateur a expiré, une authentification est requise. Veuillez vous reconnecter.";
       case 'invalid-credential':
-        return 'The supplied credential is malformed or has expired.';
-      case 'wrong-password':
-        return 'The password is invalid. Please check your password and try again.';
+        return "Les identifiants fournis sont invalides ou ont expiré.";
       case 'user-token-revoked':
-        return 'The user\'s token has been revoked. Please sign in again.';
+        return "Le jeton de l'utilisateur a été révoqué. Veuillez vous reconnecter.";
       case 'invalid-message-payload':
-        return 'The email template verification message payload is invalid.';
+        return "Le contenu du message de vérification de l'e-mail est invalide.";
       case 'invalid-sender':
-        return 'The email template sender is invalid. Please verify the sender\'s email.';
+        return "L'expéditeur du modèle d'e-mail est invalide. Veuillez vérifier l'adresse e-mail de l'expéditeur.";
       case 'invalid-recipient-email':
-        return 'The recipient email address is invalid. Please provide a valid recipient email.';
+        return "L'adresse e-mail du destinataire est invalide. Veuillez fournir une adresse e-mail valide.";
       case 'missing-iframe-start':
-        return 'The email template is missing the iframe start tag.';
+        return "Le modèle d'e-mail est incomplet : balise iframe de début manquante.";
       case 'missing-iframe-end':
-        return 'The email template is missing the iframe end tag.';
+        return "Le modèle d'e-mail est incomplet : balise iframe de fin manquante.";
       case 'missing-iframe-src':
-        return 'The email template is missing the iframe src attribute.';
+        return "Le modèle d'e-mail est incomplet : attribut src de l'iframe manquant.";
       case 'auth-domain-config-required':
-        return 'The authDomain configuration is required for the action code verification link.';
+        return "La configuration authDomain est requise pour le lien de vérification du code d'action.";
       case 'missing-app-credential':
-        return 'The app credential is missing. Please provide valid app credentials.';
+        return "Les identifiants de l'application sont manquants. Veuillez fournir des identifiants valides.";
       case 'invalid-app-credential':
-        return 'The app credential is invalid. Please provide a valid app credential.';
+        return "Les identifiants de l'application sont invalides. Veuillez fournir des identifiants valides.";
       case 'session-cookie-expired':
-        return 'The Firebase session cookie has expired. Please sign in again.';
+        return "Le cookie de session Firebase a expiré. Veuillez vous reconnecter.";
       case 'uid-already-exists':
-        return 'The provided user ID is already in use by another user.';
+        return "L'identifiant utilisateur fourni est déjà utilisé par un autre utilisateur.";
       case 'invalid-cordova-configuration':
-        return 'The provided Cordova configuration is invalid.';
+        return "La configuration Cordova fournie est invalide.";
       case 'app-deleted':
-        return 'This instance of FirebaseApp has been deleted.';
-      case 'user-disabled':
-        return 'The user account has been disabled.';
+        return "Cette instance de FirebaseApp a été supprimée.";
       case 'user-token-mismatch':
-        return 'The provided user\'s token has a mismatch with the authenticated user\'s user ID.';
+        return "Le jeton de l'utilisateur fourni ne correspond pas à l'identifiant de l'utilisateur authentifié.";
       case 'web-storage-unsupported':
-        return 'Web storage is not supported or is disabled.';
-      case 'invalid-credential':
-        return 'The supplied credential is invalid. Please check the credential and try again.';
+        return "Le stockage web n'est pas pris en charge ou est désactivé.";
       case 'app-not-authorized':
-        return 'The app is not authorized to use Firebase Authentication with the provided API key.';
+        return "L'application n'est pas autorisée à utiliser Firebase Authentication avec la clé API fournie.";
       case 'keychain-error':
-        return 'A keychain error occurred. Please check the keychain and try again.';
+        return "Une erreur de trousseau est survenue. Veuillez vérifier le trousseau et réessayer.";
       case 'internal-error':
-        return 'An internal authentication error occurred. Please try again later.';
+        return "Une erreur interne d'authentification est survenue. Veuillez réessayer plus tard.";
       case 'INVALID_LOGIN_CREDENTIALS':
-        return 'Invalid login credentials.';
+        return "Identifiants de connexion invalides.";
       default:
-        return 'An unexpected authentication error occurred. Please try again.';
+        return "Une erreur d'authentification inattendue est survenue. Veuillez réessayer.";
     }
   }
 }

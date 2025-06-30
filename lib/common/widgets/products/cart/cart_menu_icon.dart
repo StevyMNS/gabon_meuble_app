@@ -39,9 +39,9 @@ class GMCartCounterIcon extends StatelessWidget {
             child: Center(
               child: Text(
                 "2",
-                style: Theme.of(
-                  context,
-                ).textTheme.labelLarge!.apply(color: GMColors.white),
+                style: Theme.of(context).textTheme.labelLarge!.apply(
+                  color: dark ? GMColors.black : GMColors.white,
+                ),
               ),
             ),
           ),

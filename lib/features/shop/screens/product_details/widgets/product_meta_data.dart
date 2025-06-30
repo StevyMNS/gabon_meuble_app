@@ -41,19 +41,19 @@ class GMProductMetaData extends StatelessWidget {
 
             /// Price
             Text(
-              "\$250",
+              "25000 F",
               style: Theme.of(context).textTheme.titleSmall!.apply(
                 decoration: TextDecoration.lineThrough,
               ),
             ),
             const SizedBox(width: GSizes.spaceBtwItems),
-            GMProductPriceText(price: "175", isLarge: true),
+            GMProductPriceText(price: "1500000", isLarge: false),
           ],
         ),
         const SizedBox(height: GSizes.spaceBtwItems / 1.5),
 
         /// Title
-        GMProductTitleText(title: "Green Nike Sport Shirt"),
+        GMProductTitleText(title: "Portail vert à motifs dorés"),
         const SizedBox(height: GSizes.spaceBtwItems / 1.5),
 
         /// Stack Status
@@ -76,7 +76,7 @@ class GMProductMetaData extends StatelessWidget {
               overlayColor: darkMode ? GMColors.white : GMColors.black,
             ),
             const GMBrandTitleWithVerifiedIcon(
-              title: "Nike",
+              title: "Sarah Ndong",
               brandTextSize: TextSizes.medium,
             ),
           ],

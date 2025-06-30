@@ -34,18 +34,21 @@ class GMVerticalImageText extends StatelessWidget {
               child: Container(
                 width: 56,
                 height: 56,
-                padding: const EdgeInsets.all(GSizes.sm),
+                //padding: const EdgeInsets.all(GSizes.sm),
                 decoration: BoxDecoration(
                   color:
                       backgroundColor ??
                       (dark ? GMColors.dark : GMColors.white),
                   borderRadius: BorderRadius.circular(100),
                 ),
-                child: Image(
-                  image: AssetImage(image),
-                  fit: BoxFit.cover,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(100),
+                  child: Image(
+                    image: AssetImage(image),
+                    fit: BoxFit.cover,
 
-                  ///color: dark ? GMColors.light : GMColors.dark,
+                    ///color: dark ? GMColors.light : GMColors.dark,
+                  ),
                 ),
               ),
             ),

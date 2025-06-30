@@ -79,23 +79,22 @@ class GMProductCardHorizontal extends StatelessWidget {
           SizedBox(
             width: 172,
             child: Padding(
-              padding: const EdgeInsets.only(top: GSizes.sm, left: GSizes.sm),
+              padding: const EdgeInsets.only(left: GSizes.sm),
               child: Column(
                 children: [
                   const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       GMProductTitleText(
-                        title: "Green Nike Half Sleeves Shirt",
+                        title: "Portail vert à motifs dorés",
                         smallSize: true,
                       ),
-                      SizedBox(height: GSizes.spaceBtwItems / 2),
-                      GMBrandTitleWithVerifiedIcon(title: "Nike"),
+                      //SizedBox(height: GSizes.spaceBtwItems / 2),
+                      GMBrandTitleWithVerifiedIcon(title: "Sarah Ndong"),
                     ],
                   ),
 
                   const Spacer(),
-
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

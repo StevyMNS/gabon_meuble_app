@@ -12,19 +12,19 @@ class MessagesPage extends StatelessWidget {
       'name': 'Jean Mbadinga',
       'lastMessage': 'Votre commande est presque terminée !',
       'time': '10:45',
-      'image': 'assets/images/reviews/review_profile_image_1.jpg',
+      'image': 'assets/images/content/jean.jpeg',
     },
     {
       'name': 'Sarah Ndong',
       'lastMessage': 'Bonjour ! Avez-vous validé le devis ?',
       'time': 'Hier',
-      'image': 'assets/images/reviews/review_profile_image_2.jpeg',
+      'image': 'assets/images/content/ndong.jpeg',
     },
     {
       'name': 'Kevin Mba',
       'lastMessage': 'Merci pour la commande.',
       'time': 'Lun.',
-      'image': 'assets/images/reviews/review_profile_image_3.jpeg',
+      'image': 'assets/images/content/kevin.jpeg',
     },
   ];
 
