@@ -7,14 +7,15 @@ import '../../../utils/helpers/helper_functions.dart';
 class GMVerticalImageText extends StatelessWidget {
   const GMVerticalImageText({
     super.key,
-    required this.image,
+    required this.icon,
     required this.title,
     this.textColor = Colors.white,
     this.backgroundColor,
     this.onTape,
   });
 
-  final String image, title;
+  final String title;
+  final IconData icon;
   final Color textColor;
   final Color? backgroundColor;
   final void Function()? onTape;
@@ -34,22 +35,14 @@ class GMVerticalImageText extends StatelessWidget {
               child: Container(
                 width: 56,
                 height: 56,
-                //padding: const EdgeInsets.all(GSizes.sm),
+                padding: const EdgeInsets.all(GSizes.sm),
                 decoration: BoxDecoration(
                   color:
                       backgroundColor ??
                       (dark ? GMColors.dark : GMColors.white),
                   borderRadius: BorderRadius.circular(100),
                 ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(100),
-                  child: Image(
-                    image: AssetImage(image),
-                    fit: BoxFit.cover,
-
-                    ///color: dark ? GMColors.light : GMColors.dark,
-                  ),
-                ),
+                child: Icon(icon, color: dark ? GMColors.light : GMColors.dark),
               ),
             ),
 

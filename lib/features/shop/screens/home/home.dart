@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gabon_meuble_app/common/widgets/images/gm_rounded_image.dart';
+import 'package:gabon_meuble_app/features/shop/controllers/artisans/artisan_controller.dart';
+import 'package:gabon_meuble_app/features/shop/controllers/categories/category_controller.dart';
+import 'package:gabon_meuble_app/features/shop/controllers/commandes/commande_controller.dart';
+import 'package:gabon_meuble_app/features/shop/controllers/products/product_controller.dart';
 import 'package:gabon_meuble_app/features/shop/screens/compare/compare_product.dart';
 import 'package:gabon_meuble_app/features/shop/screens/order/order.dart';
 import 'package:gabon_meuble_app/features/shop/screens/wishlist/wishlist.dart';
@@ -23,6 +27,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final productController = Get.put(ProductController());
+    final artisanController = Get.put(ArtisanController());
+    final commandeController = Get.put(CommandeController());
+    Get.put(CategorieController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -76,14 +84,28 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () => Get.to(() => const OrderScreen()),
                   ),
                   const SizedBox(height: GSizes.spaceBtwItems),
-                  OrderCard(
-                    productName: "Chaise design",
-                    status: "En fabrication",
-                  ),
-                  OrderCard(
-                    productName: "Table bois massif",
-                    status: "En livraison",
-                  ),
+                  Obx(() {
+                    final commandes = commandeController.commandes;
+                    final commandesToShow =
+                        commandes.length > 3
+                            ? commandes.sublist(0, 3)
+                            : commandes;
+                    return Column(
+                      children:
+                          commandesToShow
+                              .map(
+                                (commande) => OrderCard(
+                                  productName:
+                                      productController
+                                          .getProduitById(commande.produitId)
+                                          ?.titre ??
+                                      "Produit inconnu",
+                                  status: commande.statut,
+                                ),
+                              )
+                              .toList(),
+                    );
+                  }),
                   const SizedBox(height: GSizes.spaceBtwSections),
 
                   /// Artisans recommandés
@@ -92,18 +114,27 @@ class HomeScreen extends StatelessWidget {
                     showActionButton: false,
                   ),
                   const SizedBox(height: GSizes.spaceBtwItems),
-                  ArtisanCard(
-                    name: "Jean Mbadinga",
-                    speciality: "Menuisier",
-                    location: "Libreville",
-                    image: "assets/images/content/jean.jpeg",
-                  ),
-                  ArtisanCard(
-                    name: "Sarah Ndong",
-                    speciality: "Soudeuse",
-                    location: "Port-Gentil",
-                    image: "assets/images/content/ndong.jpeg",
-                  ),
+                  Obx(() {
+                    final artisans = artisanController.artisans;
+                    if (artisans.isEmpty) {
+                      return const Center(child: Text("Aucun artisan trouvé"));
+                    }
+                    return SizedBox(
+                      height: 300,
+                      child: ListView.builder(
+                        itemCount: artisans.length > 5 ? 5 : artisans.length,
+                        itemBuilder: (context, index) {
+                          final artisan = artisans[index];
+                          return ArtisanCard(
+                            name: artisan.nom,
+                            speciality: artisan.specialite,
+                            location: artisan.ville,
+                            image: artisan.image,
+                          );
+                        },
+                      ),
+                    );
+                  }),
                   const SizedBox(height: GSizes.spaceBtwSections),
                   ElevatedButton.icon(
                     icon: const Icon(Icons.compare_arrows),
@@ -123,20 +154,27 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () => Get.to(() => const AllProducts()),
                   ),
                   const SizedBox(height: GSizes.spaceBtwItems),
-                  GMGridLayout(
-                    itemCount: 2,
-                    itemBuilder:
-                        (_, index) => const GMProductCardVertical(
+                  Obx(() {
+                    final produits = productController.produits;
+                    final produitsToShow =
+                        produits.length > 15
+                            ? produits.sublist(0, 15)
+                            : produits;
+                    return GMGridLayout(
+                      itemCount: produitsToShow.length,
+                      itemBuilder: (_, index) {
+                        final produit = produitsToShow[index];
+                        return GMProductCardVertical(
                           widget: GMRoundedImage(
-                            height: 120,
-                            imageUrl: GMImages.productImage1,
+                            imageUrl: produit.image,
                             applyImageRadius: true,
                           ),
-                          titleProduct: "Portail vert avec motif doré",
-                          nameBrand: "Sarah Ndong",
-                        ),
-                  ),
-
+                          titleProduct: produit.titre,
+                          nameBrand: "Artisan #${produit.artisanId}",
+                        );
+                      },
+                    );
+                  }),
                   const SizedBox(height: GSizes.spaceBtwSections),
 
                   /// Suggestions personnalisées
@@ -145,18 +183,27 @@ class HomeScreen extends StatelessWidget {
                     showActionButton: false,
                   ),
                   const SizedBox(height: GSizes.spaceBtwItems),
-                  GMGridLayout(
-                    itemCount: 2,
-                    itemBuilder:
-                        (_, index) => const GMProductCardVertical(
+                  Obx(() {
+                    final produits = productController.produits;
+                    final suggestions =
+                        produits.length > 15
+                            ? produits.sublist(0, 15)
+                            : produits;
+                    return GMGridLayout(
+                      itemCount: suggestions.length,
+                      itemBuilder: (_, index) {
+                        final produit = suggestions[index];
+                        return GMProductCardVertical(
                           widget: GMRoundedImage(
-                            imageUrl: GMImages.productImage2,
+                            imageUrl: produit.image,
                             applyImageRadius: true,
                           ),
-                          titleProduct: "Salon gris de 8 places",
-                          nameBrand: "Jean Mbadinga",
-                        ),
-                  ),
+                          titleProduct: produit.titre,
+                          nameBrand: "Artisan #${produit.artisanId}",
+                        );
+                      },
+                    );
+                  }),
 
                   const SizedBox(height: GSizes.spaceBtwSections),
 

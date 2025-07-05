@@ -100,7 +100,7 @@ class SettingsScreen extends StatelessWidget {
                   /// -- App Settings
                   SizedBox(height: GSizes.spaceBtwSections),
                   GMSectionHeading(
-                    title: "Paramètres de l'application",
+                    title: "Paramètres application",
                     showActionButton: false,
                   ),
                   SizedBox(height: GSizes.spaceBtwItems),

@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:gabon_meuble_app/common/widgets/appbar/appbar.dart';
 import 'package:gabon_meuble_app/common/widgets/appbar/tabbar.dart';
 import 'package:gabon_meuble_app/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:gabon_meuble_app/common/widgets/images/gm_rounded_image.dart';
 import 'package:gabon_meuble_app/common/widgets/layouts/grid_layout.dart';
 import 'package:gabon_meuble_app/common/widgets/products/cart/cart_menu_icon.dart';
+import 'package:gabon_meuble_app/common/widgets/products/products_cards/product_card_vertical.dart';
 import 'package:gabon_meuble_app/common/widgets/texts/section_heading.dart';
+import 'package:gabon_meuble_app/features/shop/controllers/categories/category_controller.dart';
+import 'package:gabon_meuble_app/features/shop/controllers/products/product_controller.dart';
 import 'package:gabon_meuble_app/features/shop/screens/brand/all_brands.dart';
 import 'package:gabon_meuble_app/features/shop/screens/brand/brand_products.dart';
-import 'package:gabon_meuble_app/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:gabon_meuble_app/utils/constants/colors.dart';
 import 'package:gabon_meuble_app/utils/constants/sizes.dart';
 import 'package:gabon_meuble_app/utils/helpers/helper_functions.dart';
@@ -20,8 +23,10 @@ class ExplorerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final productController = Get.put(ProductController());
+    final categorieController = Get.put(CategorieController());
     return DefaultTabController(
-      length: 5,
+      length: 7,
       child: Scaffold(
         appBar: GMAppBar(
           title: Text(
@@ -80,27 +85,72 @@ class ExplorerScreen extends StatelessWidget {
                 ),
 
                 /// Onglets
-                bottom: const GMTabBar(
-                  tabs: [
-                    Tab(child: Text("Tous les produits")),
-                    Tab(child: Text("Artisanat bois")),
-                    Tab(child: Text("Métal & soudure")),
-                    Tab(child: Text("Meubles intérieurs")),
-                    Tab(child: Text("Meubles extérieurs")),
-                  ],
+                bottom: PreferredSize(
+                  preferredSize: const Size.fromHeight(48),
+                  child: Obx(() {
+                    final tabs = [
+                      const Tab(child: Text("Tous les produits")),
+                      ...categorieController.categories.map(
+                        (cat) => Tab(child: Text(cat.nom)),
+                      ),
+                    ];
+                    return GMTabBar(tabs: tabs);
+                  }),
                 ),
               ),
             ];
           },
-          body: const TabBarView(
-            children: [
-              GMCategoryTab(), // Tous
-              GMCategoryTab(), // Bois
-              GMCategoryTab(), // Métal
-              GMCategoryTab(), // Intérieur
-              GMCategoryTab(), // Extérieur
-            ],
-          ),
+          body: Obx(() {
+            final categories = categorieController.categories;
+            return TabBarView(
+              children: [
+                // Onglet "Tous les produits"
+                Padding(
+                  padding: const EdgeInsets.all(GSizes.defaultSpace),
+                  child: Obx(
+                    () => GMGridLayout(
+                      itemCount: productController.produits.length,
+                      itemBuilder: (_, index) {
+                        final produit = productController.produits[index];
+                        return GMProductCardVertical(
+                          widget: GMRoundedImage(
+                            imageUrl: produit.image,
+                            applyImageRadius: true,
+                          ),
+                          titleProduct: produit.titre,
+                          nameBrand: "Artisan #${produit.artisanId}",
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                // Onglets par catégorie
+                ...categories.map(
+                  (cat) => Padding(
+                    padding: const EdgeInsets.all(GSizes.defaultSpace),
+                    child: Obx(() {
+                      final produitsCat = productController
+                          .produitsParCategorie(cat.id.toString());
+                      return GMGridLayout(
+                        itemCount: produitsCat.length,
+                        itemBuilder: (_, index) {
+                          final produit = produitsCat[index];
+                          return GMProductCardVertical(
+                            widget: GMRoundedImage(
+                              imageUrl: produit.image,
+                              applyImageRadius: true,
+                            ),
+                            titleProduct: produit.titre,
+                            nameBrand: "Artisan #${produit.artisanId}",
+                          );
+                        },
+                      );
+                    }),
+                  ),
+                ),
+              ],
+            );
+          }),
         ),
       ),
     );
