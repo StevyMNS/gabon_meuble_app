@@ -116,9 +116,11 @@ class ExplorerScreen extends StatelessWidget {
                           widget: GMRoundedImage(
                             imageUrl: produit.image,
                             applyImageRadius: true,
+                            fit: BoxFit.cover,
+                            width: double.infinity,
                           ),
                           titleProduct: produit.titre,
-                          nameBrand: "Artisan #${produit.artisanId}",
+                          nameBrand: produit.artisanNom ?? "",
                         );
                       },
                     ),
@@ -139,9 +141,11 @@ class ExplorerScreen extends StatelessWidget {
                             widget: GMRoundedImage(
                               imageUrl: produit.image,
                               applyImageRadius: true,
+                              fit: BoxFit.cover,
+                              width: double.infinity,
                             ),
                             titleProduct: produit.titre,
-                            nameBrand: "Artisan #${produit.artisanId}",
+                            nameBrand: produit.artisanNom ?? "",
                           );
                         },
                       );

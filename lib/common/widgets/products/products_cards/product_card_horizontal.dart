@@ -35,6 +35,8 @@ class GMProductCardHorizontal extends StatelessWidget {
               child: GMRoundedImage(
                 imageUrl: produit.image,
                 applyImageRadius: true,
+                fit: BoxFit.cover,
+                width: double.infinity,
               ),
             ),
           ),

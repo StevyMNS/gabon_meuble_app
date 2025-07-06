@@ -64,7 +64,7 @@ class ProfileScreen extends StatelessWidget {
 
               /// Heading Personal Info
               const GMSectionHeading(
-                title: "Informations personnelles",
+                title: "Informations personnelle",
                 showActionButton: false,
               ),
               const SizedBox(height: GSizes.spaceBtwItems),

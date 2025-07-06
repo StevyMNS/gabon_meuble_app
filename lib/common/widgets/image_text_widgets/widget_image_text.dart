@@ -49,7 +49,7 @@ class GMVerticalImageText extends StatelessWidget {
             /// Text
             const SizedBox(height: GSizes.spaceBtwItems / 2),
             SizedBox(
-              width: 55,
+              width: 95,
               child: Text(
                 title,
                 style: Theme.of(

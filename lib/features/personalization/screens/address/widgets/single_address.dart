@@ -47,7 +47,7 @@ class GMSingleAddress extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "John Doe",
+                "Jean Obiang",
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: Theme.of(context).textTheme.titleLarge,
@@ -59,10 +59,7 @@ class GMSingleAddress extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: GSizes.sm / 2),
-              const Text(
-                "82356 Timmy Coves, South Liana, Maine, 87665, USA",
-                softWrap: true,
-              ),
+              const Text("Angondjé, Akanda, GABON", softWrap: true),
             ],
           ),
         ],

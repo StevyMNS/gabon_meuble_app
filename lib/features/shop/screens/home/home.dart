@@ -120,8 +120,9 @@ class HomeScreen extends StatelessWidget {
                       return const Center(child: Text("Aucun artisan trouvé"));
                     }
                     return SizedBox(
-                      height: 300,
+                      height: 600,
                       child: ListView.builder(
+                        physics: NeverScrollableScrollPhysics(),
                         itemCount: artisans.length > 5 ? 5 : artisans.length,
                         itemBuilder: (context, index) {
                           final artisan = artisans[index];
@@ -168,9 +169,11 @@ class HomeScreen extends StatelessWidget {
                           widget: GMRoundedImage(
                             imageUrl: produit.image,
                             applyImageRadius: true,
+                            fit: BoxFit.cover,
+                            width: double.infinity,
                           ),
                           titleProduct: produit.titre,
-                          nameBrand: "Artisan #${produit.artisanId}",
+                          nameBrand: produit.artisanNom ?? "",
                         );
                       },
                     );
@@ -197,6 +200,8 @@ class HomeScreen extends StatelessWidget {
                           widget: GMRoundedImage(
                             imageUrl: produit.image,
                             applyImageRadius: true,
+                            fit: BoxFit.cover,
+                            width: double.infinity,
                           ),
                           titleProduct: produit.titre,
                           nameBrand: "Artisan #${produit.artisanId}",
@@ -219,8 +224,10 @@ class HomeScreen extends StatelessWidget {
                     itemBuilder:
                         (_, index) => const GMProductCardVertical(
                           widget: GMRoundedImage(
+                            width: double.infinity,
                             imageUrl: GMImages.productImage3,
                             applyImageRadius: true,
+                            fit: BoxFit.cover,
                           ),
                           titleProduct: "Grille de fenetres",
                           nameBrand: "Sarah Ndong",

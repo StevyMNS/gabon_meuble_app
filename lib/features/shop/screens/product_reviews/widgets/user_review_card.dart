@@ -21,10 +21,13 @@ class UserReviewCard extends StatelessWidget {
             Row(
               children: [
                 const CircleAvatar(
-                  backgroundImage: AssetImage(GMImages.userProfileImage1),
+                  backgroundImage: AssetImage(GMImages.artisan3),
                 ),
                 const SizedBox(width: GSizes.spaceBtwItems),
-                Text("John Doe", style: Theme.of(context).textTheme.titleLarge),
+                Text(
+                  "Sarah Ndong",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
               ],
             ),
             IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
@@ -37,7 +40,7 @@ class UserReviewCard extends StatelessWidget {
           children: [
             const GMRatingBarIndicator(rating: 4),
             const SizedBox(width: GSizes.spaceBtwItems),
-            Text("01 Nov, 2023", style: Theme.of(context).textTheme.bodyMedium),
+            Text("01 Juin 2025", style: Theme.of(context).textTheme.bodyMedium),
           ],
         ),
         const SizedBox(height: GSizes.spaceBtwItems),
@@ -75,7 +78,7 @@ class UserReviewCard extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     Text(
-                      "02 Nov, 2023",
+                      "02 Juin 2025",
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ],
