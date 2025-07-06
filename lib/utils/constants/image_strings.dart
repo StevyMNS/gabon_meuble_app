@@ -205,7 +205,7 @@ class GMImages {
   static const artisan2 = 'assets/images/content/kevin.jpeg';
   static const artisan3 = 'assets/images/content/ndong.jpeg';
   static const artisan4 = 'assets/images/content/aristide.png';
-  static const artisan5 = 'assets/images/content/sylvie.png';
+  static const artisan5 = 'assets/images/content/silvie.png';
   static const artisan6 = 'assets/images/content/jean.jpeg';
   static const artisan7 = 'assets/images/content/jean.jpeg';
   static const artisan8 = 'assets/images/content/jean.jpeg';
