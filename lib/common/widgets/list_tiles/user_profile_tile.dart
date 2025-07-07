@@ -19,13 +19,13 @@ class GMUserProfileTile extends StatelessWidget {
         padding: 0,
       ),
       title: Text(
-        "John Doe",
+        "Jean Obiang",
         style: Theme.of(
           context,
         ).textTheme.headlineSmall!.apply(color: GMColors.white),
       ),
       subtitle: Text(
-        "johndoe@gmail.com",
+        "jeanobiang@gmail.com",
         style: Theme.of(
           context,
         ).textTheme.bodyMedium!.apply(color: GMColors.white),

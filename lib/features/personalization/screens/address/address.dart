@@ -21,7 +21,7 @@ class UserAddressScreen extends StatelessWidget {
       appBar: GMAppBar(
         showBackArrow: true,
         title: Text(
-          "Addresses",
+          "Adresses",
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),

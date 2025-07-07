@@ -9,7 +9,10 @@ class AddNewAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: GMAppBar(showBackArrow: true, title: Text("Add new Addresses")),
+      appBar: GMAppBar(
+        showBackArrow: true,
+        title: Text("Ajouter une nouvelle Adresse"),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(GSizes.defaultSpace),
@@ -36,7 +39,7 @@ class AddNewAddressScreen extends StatelessWidget {
                       child: TextFormField(
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Iconsax.building_31),
-                          labelText: "Addresse",
+                          labelText: "Adresse",
                         ),
                       ),
                     ),
